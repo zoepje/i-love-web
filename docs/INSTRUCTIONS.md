@@ -12,7 +12,7 @@ Learning journal, blog, digital gardening.
 
 
 
-## Semester 1
+### Semester 1
 
 Maak met HTML, CSS en JS een statische site, waarin je je voortgang bijhoudt.
 
