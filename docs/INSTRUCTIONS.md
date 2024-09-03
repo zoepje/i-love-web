@@ -28,8 +28,8 @@ Maak met HTML, CSS en JS je eigen statische website. Hoe je voortgang bij in de 
 
 ### Semester 2
 
-Maak met Node, Express en EJS een redesign van je statische site uit Semester 1. Neem alle content uit Semester 1 mee, en maak hiermee een dynamische, interactieve site.
+Maak met Node, Express en EJS een doorontwikkeling op je statische site uit Semester 1. Neem alle content uit Semester 1 mee, en maak hiermee een dynamische, interactieve site.
 
 ### Semester 3 & 4
 
-Maak met Sveltekit, 11ty, Astro, of een ander framework een redesign van je website uit Semester 3. Neem alle eerdere content mee als Markdown files, met bijvoorbeeld front matter als metadata, en maak met componenten je dynamische portfolio.
+Maak met Sveltekit, 11ty, Astro, of een ander framework een doorontwikkeling van je website uit Semester 3. Neem alle eerdere content mee als Markdown files, met bijvoorbeeld front matter als metadata, en maak met componenten je dynamische portfolio.
