@@ -5,7 +5,7 @@ Learning journal, blog, digital gardening.
 ## Briefing
 
 Hou je leerproces (chronologisch) bij.
-Noteer aantekeningen, interessante links en bronnen waar je later nog naar wil kijken. 
+Noteer aantekeningen, interessante links en bronnen die je niet wil vergeten waar je later nog naar wil kijken. 
 Voeg je sketchnotes en aantekeningen van de Web Love Web presentaties en andere lezingen toe. 
 Maak hier je eigen vette, creatieve weblog, link dump, of digital garden ... 
 
