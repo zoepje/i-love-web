@@ -9,6 +9,8 @@ Noteer aantekeningen, interessante links en bronnen waar je later nog naar wil k
 Voeg je sketchnotes en aantekeningen van de Web Love Web presentaties en andere lezingen toe. 
 Maak hier je eigen vette, creatieve weblog, link dump, of digital gardening ... 
 
+Tijdens de Retrospect ga je regelmatig terugkijken wat je allemaal hebt gedaan en geleerd. Dan heb je je I Love Web project nodig als bewijslast. 
+
 **20% regel**
 
 20% van je tijd besteed je aan je eigen website. 
