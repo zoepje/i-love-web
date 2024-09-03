@@ -24,7 +24,7 @@ Tijdens de Retrospect ga je regelmatig terugkijken naar wat je allemaal hebt ged
 
 ### Semester 1
 
-Maak met HTML, CSS en JS je eigen statische website. Hoe je voortgang bij in de Wiki met Markdown, of voeg dit ook als HTML toe aan je website. Alles mag.
+Maak met HTML, CSS en JS je eigen statische website. Hou je voortgang bij in de Wiki met Markdown, of voeg dit ook als HTML bestanden toe aan je website. Alles mag.
 
 ### Semester 2
 
