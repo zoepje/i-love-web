@@ -4,6 +4,14 @@ Learning journal, blog, digital gardening.
 
 ## Briefing
 
+Hou je leerproces (chronologisch) bij.
+Noteer aantekeningen, interessante links en bronnen waar je later nog naar wil kijken. 
+Voeg je sketchnotes en aantekeningen van de Web Love Web presentaties en andere lezingen toe. 
+Maak hier je eigen vette, creatieve weblog, link dump, of digital gardening ... 
+
+**20% regel**
+
+20% van je tijd besteed je aan je eigen website. 
 
 
 
@@ -14,7 +22,7 @@ Learning journal, blog, digital gardening.
 
 ### Semester 1
 
-Maak met HTML, CSS en JS een statische site, waarin je je voortgang bijhoudt.
+Maak met HTML, CSS en JS je eigen website. Hoe je voortgang bij in de Wiki met Markdown, of voeg dit ook toe aan je website. Alles mag. 
 
 ### Semester 2
 
