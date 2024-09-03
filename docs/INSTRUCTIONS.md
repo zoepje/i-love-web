@@ -9,9 +9,7 @@ Noteer aantekeningen, interessante links en bronnen die je niet wil vergeten waa
 Voeg je sketchnotes en aantekeningen van de Web Love Web presentaties en andere lezingen toe. 
 Maak hier je eigen vette, creatieve weblog, link dump, of digital garden ... 
 
-**20% regel**
-
-20% van je tijd besteed je aan je eigen website. 
+**20% regel** 20% van je tijd besteed je aan je eigen website. 
 
 
 
