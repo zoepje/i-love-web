@@ -31,7 +31,7 @@ Deze sprit werken we met Svelte, dit is een components framework, en Svelte kit,
 **+page.svelte:** dit is een webpagina. Hier zet je HTML, CSS en JS code in. Je hoeft je geen zorgen te maken dat als je hier de style veranderd voor een element dat deze dan ook verandert op andere paginas.
 
 **+layout.svelte:** dit is een UI voor alle child routes.
-```
+```html
 <h1>Dit is cool</h1>
 
 <slot></slot> //Hier renderd content van de child routes
@@ -43,22 +43,22 @@ Deze sprit werken we met Svelte, dit is een components framework, en Svelte kit,
 
 **+server.js:** hierin kun je API routes maken zoals GET en POST methods.
 
-```
+```js
 import { json } from '@sveltejs/kit'; // zo wordt json omgezet naar string
 ```
 
 #### Code stukjes
 Je kunt documenten uit `src/lib` halen door `$lib/` te gebruiken. Zoals in dit voorbeeld:
-```
+```js
 import fetchJson from "$lib/fetch-json"
 ```
 
-```
+```js
 await request.formData() // POST handeling van een form
 ```
 
 Je kunt forms enhancen met 
-```
+```js
 import {enhance} from '$app/forms'
 
 <form use:enhance>
