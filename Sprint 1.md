@@ -64,3 +64,57 @@ import {enhance} from '$app/forms'
 <form use:enhance>
 </form>
 ```
+
+## 5 september 2024
+### Fetch data uit API
+Maak een document `fetch-json.js` aan in de lib en zet dit erin:
+```js
+/**
+ * An asynchronous helper function that wraps the standard node.js fetch API.
+ * This function calls an API url passed as the first and mandatory parameter,
+ * there is an optional payload parameter to send a json object, eg. a filter.
+ * It then calls the API and returns the response body parsed  as a json object.
+ * @example <caption>fetchJson as returning function using the await keyword</caption>
+ * const data = await fetchJson('https://api-url.com/endpoint/')
+ * @example <caption>fetchJson as oneliner using the then() structure.</caption>
+ * fetchJson('https://api-url.com/endpoint/').then((data)=>{
+ *  // use data...
+ * })
+ * @param {string} url the api endpoint to address
+ * @param {object} [payload] the payload to send to the API
+ * @returns the response from the API endpoint parsed as a json object
+ */
+export default async function fetchJson(url, payload = {}) {
+  return await fetch(url, payload)
+    .then((response) => response.json())
+    .catch((error) => error)
+}
+```
+
+Dan in de `+page.server.js` importeer het `fetch-json.js` bestand en maak een functie load:
+```js
+export async function load() {
+  const url = 'https://fdnd.directus.app/items/squad'
+
+  const squads = await fetchJson(url)
+
+  return {
+    squads: squads.data
+  }
+}
+```
+
+Als je data voor een detailpage wilt ophalen dan doe je dat zo:
+```js
+export async function load({params}) {
+  const url = `https://fdnd.directus.app/items/squad/${params.squad_id}`
+
+  const squad = await fetchJson(url)
+
+  return {
+    squad: squad.data
+  }
+}
+```
+
+## 6 september 2024
