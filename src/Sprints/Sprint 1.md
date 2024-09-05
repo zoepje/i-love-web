@@ -1,3 +1,13 @@
+---
+title: Sprint 1
+description: Your tribe for live
+date: '2024-09-02'
+categories:
+  - svelte
+  - sveltekit
+published: true
+---
+
 # Your tribe for live
 ## 3/4 september 2024
 Deze sprit werken we met Svelte, dit is een components framework, en Svelte kit, dit is een app framework. Svelte kit apps zijn server-side renderd als default. 
