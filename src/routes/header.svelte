@@ -1,5 +1,5 @@
 <script lang="ts">
-  import * as config from '$lib/convig'
+  import * as config from '$lib/config'
 </script>
 
 <nav>
