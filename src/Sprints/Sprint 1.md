@@ -8,7 +8,6 @@ categories:
 published: true
 ---
 
-# Your tribe for live
 ## 3/4 september 2024
 Deze sprit werken we met Svelte, dit is een components framework, en Svelte kit, dit is een app framework. Svelte kit apps zijn server-side renderd als default. 
 
@@ -24,17 +23,17 @@ Deze sprit werken we met Svelte, dit is een components framework, en Svelte kit,
 
 #### File tree
 - src
-  - lib (Hier komen alle bestanden in te staan die je hergebruikt)
-  - routes (alle routes worden hier automatisch door aangemaakt)
-    - [slug] (detailpage)
-      - +page.svelte (/[slug])
+  - lib *(Hier komen alle bestanden in te staan die je hergebruikt)*
+  - routes *(alle routes worden hier automatisch door aangemaakt)*
+    - [slug] *(detailpage)*
+      - +page.svelte *(/[slug])*
     - folder
-      - +page.svelte (/folder)
-    - +page.svelte (/)
-  - app.html (de head van de html)
-- static (alle assets)
+      - +page.svelte *(/folder)*
+    - +page.svelte *(/)*
+  - app.html *(de head van de html)*
+- static *(alle assets)*
 - package.json
-- svelte.convig.js (Als je een live url wilt moet je hier its veranderen)
+- svelte.convig.js *(Als je een live url wilt moet je hier its veranderen)*
 - vite.convig.js
 
 #### Verschillende soorten files
