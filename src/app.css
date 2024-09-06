@@ -155,8 +155,19 @@ li {
 }
 
 .prose pre {
+	background: var(--surface-4-dark);
+	overflow: scroll;
 	max-inline-size: 100%;
-	padding: 1rem;
+	margin-block: var(--size-2);
+	padding: var(--size-3);
 	border-radius: 8px;
 	tab-size: 2;
+
+	& code {
+		background: var(--surface-4-dark);
+	}
+}
+
+.prose code {
+	background-color: var(--surface-4);
 }
