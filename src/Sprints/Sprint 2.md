@@ -8,4 +8,3 @@ categories:
 published: true
 ---
 
-# Lose your head
