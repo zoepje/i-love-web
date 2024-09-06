@@ -126,5 +126,3 @@ export async function load({params}) {
   }
 }
 ```
-
-## 6 september 2024
