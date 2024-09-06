@@ -1,13 +1,13 @@
 # I Love Web
 
-Learning journal, blog, digital garden... jouw  persoonlijke i-love-web-site is een verzameling zaken die met elkaar jouw frontenderschap tentoon stellen. Het bestaat uit een learning journal welke je routinematig, het liefst elke dag, bijhoudt. Daarnaast is er de etalage, een site waarbij de vorm compleet vrij staat maar het doel vastligt, laten zien wie je bent.
+Learning journal, blog, digital garden... jouw  persoonlijke i-love-web-site is een verzameling zaken die met elkaar jouw frontenderschap tentoon stellen. Het bestaat uit een [learning journal](#learning-journal) welke je routinematig, het liefst elke dag, bijhoudt. Daarnaast is er de [etalage](#etalage), een site waarbij de vorm compleet vrij staat maar het doel vastligt, laten zien wie je bent.
 
 
 **20% regel** Bij sommige bedrijven mag je 20% van je tijd besteden aan je eigen projecten. Bij FDND reserveer je 20% van je tijd voor het bijhouden van je learning journal en het vullen van jouw etalage.
 
-## Routine
+## Learning journal
 
-Houd je leerproces (chronologisch) bij.
+Houd je leerproces routinematig (chronologisch) bij.
 Noteer aantekeningen, interessante links en bronnen die je niet wil vergeten waar je later nog naar wil kijken. 
 Voeg je sketchnotes en aantekeningen van de Web Love Web presentaties en andere lezingen toe. 
 
