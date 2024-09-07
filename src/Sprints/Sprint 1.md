@@ -234,8 +234,8 @@ Deze data kan ik dan gebruiken in `+page.svelte` om de content weer te geven op 
 Mdsvex gebruikt [Prism.js](https://prismjs.com/) voor het opmaken van `<pre> <code>`. Je kunt een thema uit zoeken op [prismJS themes](https://github.com/PrismJS/prism-themes?tab=readme-ov-file). De CSS van het thema dat je wilt, download je en kun je als stylesheet toevogen zoals bij elk ander CSS bestand. 
 Op deze manier gaan je code stukjes van dit:
 
-![geen kleurtjes code](static/images/no-highlights.png)
+![geen kleurtjes code](/images/no-highlights.png)
 
 Naar dit:
 
-![leuke kleurtjes code](/static/images/highlight-code.png)
+![leuke kleurtjes code](/images/highlight-code.png)

@@ -221,3 +221,7 @@ li {
 .prose dt {
 	color: var(--color-4);
 }
+
+.prose img {
+	border: var(--color-1) var(--border-size-2) solid;
+}
