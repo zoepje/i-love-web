@@ -201,6 +201,7 @@ li {
 
 .prose code {
 	background-color: var(--surface-4);
+	font-size: var(--font-size-1);
 }
 
 .prose .uitleg, .prose .uitleg-2 {
