@@ -3,7 +3,7 @@ import type { Post } from '$lib/types'
 
 export const prerender = true
 
-export async function GET({ fetch }) {
+export async function GET({ fetch }: {fetch:any}) {
 	const response = await fetch('api/posts')
 	const posts: Post[] = await response.json()
 
