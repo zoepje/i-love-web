@@ -8,6 +8,8 @@ categories:
 published: true
 ---
 
+## Table of Contents
+
 ## 3 september 2024
 Deze sprit werken we met Svelte, dit is een components framework, en Svelte kit, dit is een app framework. Svelte kit apps zijn server-side renderd als default. 
 
