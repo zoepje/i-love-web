@@ -5,7 +5,7 @@
 
 <nav>
   <a href="/" class="title">
-    <b>{config.title}</b>
+    <b>Journal</b>
   </a>
 
   <ul class="links">
