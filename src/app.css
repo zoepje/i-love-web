@@ -192,6 +192,7 @@ li {
 	padding: var(--size-3);
 	border-radius: 8px;
 	tab-size: 2;
+	font-family: var(--font-mono);
 
 	& code {
 		background: var(--surface-4-dark);
