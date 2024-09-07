@@ -23,6 +23,7 @@
 
 <style>
   .posts {
+    list-style: none;
     display: grid;
     gap: var(--size-7);
   }
