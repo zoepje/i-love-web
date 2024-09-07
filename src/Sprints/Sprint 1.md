@@ -139,7 +139,7 @@ export async function load({params}) {
 ```
 
 ## 6 september 2024
-Voor het maken van mijn learnig journal wilde ik een website waarin je een overzicht hebt over all mijn aantekeningen. Deze aantekeningen zet ik in Markdown bestanden die ik later ophaal en omzet naar HTML zodat ik een soort van blog heb. Ik heb dit gedaan met behulp van een [SvelteKit blog](https://joyofcode.xyz/sveltekit-markdown-blog) tutorial
+Voor het maken van mijn learnig journal wilde ik een website waarin je een overzicht hebt over all mijn aantekeningen. Deze aantekeningen zet ik in Markdown bestanden die ik later ophaal en omzet naar HTML zodat ik een soort van blog heb. Ik heb dit gedaan met behulp van een [SvelteKit blog](https://joyofcode.xyz/sveltekit-markdown-blog) tutorial.
 
 ### Local api endpoint
 Je kunt een API endpoint creëren in je bestanden. Deze kun je per page aanmaken met een `+page.server.ts` bestand. Maar omdat ik het meerdere keren wil gebruiken maak je een map `routes/api/posts` aan met daarin een `+server.ts`. [API endpoint](https://joyofcode.xyz/sveltekit-markdown-blog#posts-api-endpoint)
