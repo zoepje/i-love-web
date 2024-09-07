@@ -13,17 +13,25 @@ published: true
 ## 3 september 2024
 Deze sprit werken we met Svelte, dit is een components framework, en Svelte kit, dit is een app framework. Svelte kit apps zijn server-side renderd als default. 
 
-### Svelte kit: 
+### Svelte kit 
 - Folder based routing. 
 - GET & POST worden onderwater afgehandeld
 - Elke rout heeft server & component bestand
 - Data word geexpoteerd van het server bestand naar het component
 
-#### Instalatie
+#### Installatie
 - [Sveltekit](https://kit.svelte.dev/)
+
+```
+$ npm create svelte@latest my-app
+$ cd my-app
+$ npm install
+$ npm run dev
+$ npm install @directus/sdk
+```
 - [Directus + Sveltekit](https://docs.directus.io/blog/getting-started-directus-sveltekit.html)
 
-#### File tree
+### File tree
 - src
   - lib <span class="uitleg">hier komen alle bestanden in te staan die je hergebruikt</span>
   - routes <span class="uitleg">alle routes worden hier automatisch door aangemaakt</span>
@@ -38,7 +46,7 @@ Deze sprit werken we met Svelte, dit is een components framework, en Svelte kit,
 - svelte.convig.js <span class="uitleg">als je een live url wilt moet je hier its veranderen</span>
 - vite.convig.js
 
-#### Verschillende soorten files
+### Verschillende soorten files
 <dl>
 <dt>+page.svelte:</dt> 
 <dd>Hierin zet je HTML, CSS en JS code in. Je hoeft je geen zorgen te maken dat als je hier de style veranderd voor een element dat deze dan ook verandert op andere paginas. Want svelte kit maakt zelf classes hiervoor aan.</dd>
@@ -65,7 +73,7 @@ import { json } from '@sveltejs/kit'; // zo wordt json omgezet naar string
 ```
 </dl>
 
-#### Code stukjes
+### Code stukjes
 Je kunt documenten uit `src/lib` halen door `$lib/` te gebruiken. Zoals in dit voorbeeld:
 ```js
 import fetchJson from "$lib/fetch-json"
