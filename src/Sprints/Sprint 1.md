@@ -203,3 +203,39 @@ In de `+page.svelte` kun je door de data heen loopen met
 ```
 
 ### Markdown omzetten naar HTML
+Ik heb gebruik gemaakt van [Mdsvex](https://mdsvex.pngwn.io/) die ervoor zorgt dat je svelte components kunt gebruiken in je markdown. En markdown kunt gebruiken als svelte component. Het [opzetten van Mdsvex](https://joyofcode.xyz/sveltekit-markdown-blog#setting-up-mdsvex) is heel makkelijk te volgen.
+
+Aan gezien ik meerdere posts heb, maak ik een detailpage hiervoor aan in `routes/[slug]`. Ook maak ik hierin een `+page.ts` waarin ik de data ophaal.
+
+```JS
+import { error } from '@sveltejs/kit'
+
+export async function load({ params }) {
+	try {
+		const post = await import(`../../posts/${params.slug}.md`)
+
+		return {
+			content: post.default,
+			meta: post.metadata
+		}
+	} catch (e) {
+		error(404, `Could not find ${params.slug}`)
+	}
+}
+```
+
+Deze data kan ik dan gebruiken in `+page.svelte` om de content weer te geven op de detailpage.
+
+```svelte
+<svelte:component this={data.content} />
+```
+
+### Pre code met kleurtjes
+Mdsvex gebruikt [Prism.js](https://prismjs.com/) voor het opmaken van `<pre> <code>`. Je kunt een thema uit zoeken op [prismJS themes](https://github.com/PrismJS/prism-themes?tab=readme-ov-file). De CSS van het thema dat je wilt, download je en kun je als stylesheet toevogen zoals bij elk ander CSS bestand. 
+Op deze manier gaan je code stukjes van dit:
+
+![geen kleurtjes code](static/images/no-highlights.png)
+
+Naar dit:
+
+![leuke kleurtjes code](/static/images/highlight-code.png)
