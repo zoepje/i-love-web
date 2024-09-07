@@ -29,6 +29,7 @@
   }
 
   .links {
+    list-style: none;
     margin-block: var(--size-7);
   }
 
