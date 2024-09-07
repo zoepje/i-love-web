@@ -48,7 +48,6 @@ Deze sprit werken we met Svelte, dit is een components framework, en Svelte kit,
 <h1>Dit is cool</h1>
 
 <slot /> //Hier renderd content van de child routes
-
 ```
 <dt>+page.server.js:</dt> 
 <dd>Hierin staat de server side JavaScript voor de pagina die in hetzelfde mapje zit.</dd>
@@ -76,8 +75,10 @@ await request.formData() // POST handeling van een form
 ```
 
 Je kunt forms enhancen met: 
-```js
-import {enhance} from '$app/forms'
+```svelte
+<script>
+  import {enhance} from '$app/forms'
+</script>
 
 <form use:enhance>
 </form>
@@ -138,7 +139,67 @@ export async function load({params}) {
 ```
 
 ## 6 september 2024
-Voor het maken van mijn learnig journal wilde ik een website waarin je een overzicht hebt over all mijn aantekeningen. Deze aantekeningen zet ik in Markdown bestanden die ik later ophaal en omzet naar HTML zodat ik een soort van blog heb.
+Voor het maken van mijn learnig journal wilde ik een website waarin je een overzicht hebt over all mijn aantekeningen. Deze aantekeningen zet ik in Markdown bestanden die ik later ophaal en omzet naar HTML zodat ik een soort van blog heb. Ik heb dit gedaan met behulp van een [SvelteKit blog](https://joyofcode.xyz/sveltekit-markdown-blog) tutorial
 
 ### Local api endpoint
-Je kunt een API enpoint creëren in je bestanden.
+Je kunt een API endpoint creëren in je bestanden. Deze kun je per page aanmaken met een `+page.server.ts` bestand. Maar omdat ik het meerdere keren wil gebruiken maak je een map `routes/api/posts` aan met daarin een `+server.ts`. [API endpoint](https://joyofcode.xyz/sveltekit-markdown-blog#posts-api-endpoint)
+
+```JS
+import { json } from '@sveltejs/kit'
+import type { Post } from '$lib/types'
+
+async function getPosts() {
+	let posts: Post[] = []
+
+	const paths = import.meta.glob('/src/posts/*.md', { eager: true })
+
+	for (const path in paths) {
+		const file = paths[path]
+		const slug = path.split('/').at(-1)?.replace('.md', '')
+
+		if (file && typeof file === 'object' && 'metadata' in file && slug) {
+			const metadata = file.metadata as Omit<Post, 'slug'>
+			const post = { ...metadata, slug } satisfies Post
+			post.published && posts.push(post)
+		}
+	}
+
+	posts = posts.sort((first, second) =>
+    new Date(second.date).getTime() - new Date(first.date).getTime()
+	)
+
+	return posts
+}
+
+export async function GET() {
+	const posts = await getPosts()
+	return json(posts)
+}
+```
+
+### Local API data ophalen
+Als een endpoint hebt gecreerdt kun je de data ophalen in een `+page.server.js` bestand.
+
+```JS
+import type { Post } from '$lib/types'
+
+export async function load({ fetch }) {
+	const response = await fetch('api/posts')
+	const posts: Post[] = await response.json()
+	return { posts }
+}
+```
+
+In de `+page.svelte` kun je door de data heen loopen met
+
+```svelte
+  {#each data.posts as post}
+    <li class="post">
+      <a href={post.slug} class="title">{post.title}</a>
+      <p class="date">{formatDate(post.date)}</p>
+      <p class="description">{post.description}</p>
+    </li>
+  {/each}
+```
+
+### Markdown omzetten naar HTML
