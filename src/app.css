@@ -10,6 +10,10 @@ html {
 	--brand-dark: var(--orange-3);
 	--text-1-dark: var(--gray-3);
 	--text-2-dark: var(--gray-5);
+	--color-1-dark: var(--purple-4);
+	--color-2-dark: var(--indigo-4);
+	--color-3-dark: var(--orange-4);
+	--color-4-dark: var(--green-4);
 	--surface-1-dark: var(--gray-12);
 	--surface-2-dark: var(--gray-11);
 	--surface-3-dark: var(--gray-10);
@@ -21,6 +25,10 @@ html {
 	--brand-light: var(--orange-10);
 	--text-1-light: var(--gray-8);
 	--text-2-light: var(--gray-7);
+	--color-1-light: var(--purple-7);
+	--color-2-light: var(--indigo-7);
+	--color-3-light: var(--orange-7);
+	--color-4-light: var(--green-10);
 	--surface-1-light: var(--gray-0);
 	--surface-2-light: var(--gray-1);
 	--surface-3-light: var(--gray-2);
@@ -35,6 +43,10 @@ html {
 	--brand: var(--brand-dark);
 	--text-1: var(--text-1-dark);
 	--text-2: var(--text-2-dark);
+	--color-1: var(--color-1-dark);
+	--color-2: var(--color-2-dark);
+	--color-3: var(--color-3-dark);
+	--color-4: var(--color-4-dark);
 	--surface-1: var(--surface-1-dark);
 	--surface-2: var(--surface-2-dark);
 	--surface-3: var(--surface-3-dark);
@@ -50,6 +62,10 @@ html {
 		--brand: var(--brand-light);
 		--text-1: var(--text-1-light);
 		--text-2: var(--text-2-light);
+		--color-1: var(--color-1-light);
+		--color-2: var(--color-2-light);
+		--color-3: var(--color-3-light);
+		--color-4: var(--color-4-light);
 		--surface-1: var(--surface-1-light);
 		--surface-2: var(--surface-2-light);
 		--surface-3: var(--surface-3-light);
@@ -65,6 +81,10 @@ html {
 	--brand: var(--brand-dark);
 	--text-1: var(--text-1-dark);
 	--text-2: var(--text-2-dark);
+	--color-1: var(--color-1-dark);
+	--color-2: var(--color-2-dark);
+	--color-3: var(--color-3-dark);
+	--color-4: var(--color-4-dark);
 	--surface-1: var(--surface-1-dark);
 	--surface-2: var(--surface-2-dark);
 	--surface-3: var(--surface-3-dark);
@@ -79,6 +99,10 @@ html {
 	--brand: var(--brand-light);
 	--text-1: var(--text-1-light);
 	--text-2: var(--text-2-light);
+	--color-1: var(--color-1-light);
+	--color-2: var(--color-2-light);
+	--color-3: var(--color-3-light);
+	--color-4: var(--color-4-light);
 	--surface-1: var(--surface-1-light);
 	--surface-2: var(--surface-2-light);
 	--surface-3: var(--surface-3-light);
@@ -136,8 +160,14 @@ li {
 /* ... */
 
 .prose :is(h2, h3, h4, h5, h6) {
-	margin-top: var(--size-8);
+	margin-top: var(--size-6);
 	margin-bottom: var(--size-3);
+}
+
+.prose :is(h2) {
+	margin-bottom: var(--size-1);
+	font-size: var(--font-size-3);
+	color: var(--color-1);
 }
 
 .prose p:not(:is(h2, h3, h4, h5, h6) + p) {
@@ -170,4 +200,22 @@ li {
 
 .prose code {
 	background-color: var(--surface-4);
+}
+
+.prose .uitleg, .prose .uitleg-2 {
+	padding-left: 10px;
+	font-style: italic;
+	font-size: var(--font-size-1);
+}
+
+.prose .uitleg {
+	color: var(--color-2); 
+}
+
+.prose .uitleg-2 {
+	color: var(--color-3);
+}
+
+.prose dt {
+	color: var(--color-4);
 }
