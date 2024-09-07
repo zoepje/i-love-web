@@ -3,8 +3,8 @@ import { error } from "@sveltejs/kit"
 /** @type {import('./$types').EntryGenerator} */
 export function entries() {
 	return [
-		{ slug: 'Sprint 1' },
-		{ slug: 'Sprint 2' }
+		{ slug: 'Sprint-1' },
+		{ slug: 'Sprint-2' }
 	];
 }
 
