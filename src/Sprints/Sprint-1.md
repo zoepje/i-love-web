@@ -249,3 +249,11 @@ Op deze manier gaan je code stukjes van dit:
 Naar dit:
 
 ![leuke kleurtjes code](/images/highlight-code.png)
+
+
+## 9 september 2024
+### Figma 
+[Figma oefeningen](https://www.figma.com/design/ovj9RV7KsISxatMNbbzH9W/FDND-Figma-jaar-2-template-(Community)?node-id=1-3&t=nP0zrJXFQEmQznRU-1)
+
+Om een [Figma components](https://help.figma.com/hc/en-us/articles/360038662654-Guide-to-components-in-Figma) te gebruiken kun je **opt/alt** indrukken en het component slepen naar waar je het wilt gebruiken.
+
