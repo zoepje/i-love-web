@@ -1,9 +1,10 @@
 # I Love Web
 
-Learning journal en digital garden... jouw  persoonlijke i-love-web-site is een verzameling zaken die met elkaar jouw frontenderschap tentoon stellen. Het bestaat uit een [learning journal](#learning-journal) welke je routinematig, het liefst elke dag, bijhoudt. Daarnaast is er de [digital garden](#digital garden), een site waarbij de vorm compleet vrij staat.
+Learning journal en digital garden... jouw  persoonlijke i-love-web-site is een verzameling zaken die met elkaar jouw frontenderschap tentoon stellen. Het bestaat uit een [learning journal](#learning-journal) welke je routinematig, het liefst elke dag, bijhoudt. Daarnaast is er de [digital garden](#digital-garden), een site waarbij de vorm compleet vrij staat.
 
 **20% regel** Bij sommige bedrijven mag je 20% van je tijd besteden aan je eigen projecten. Bij FDND reserveer je 20% van je tijd voor het bijhouden van je learning journal en het werken aan jouw Digital Garden.
 
+Fork en clone deze leertaak en maak 'm van jezelf.
 
 ## Learning journal
 
@@ -13,7 +14,7 @@ Voeg je sketchnotes en aantekeningen van de Web Love Web presentaties en andere 
 
 ## Digital Garden
 
-Maak hier je eigen vette, creatieve weblog, link dump, of playground... Hiermee ga je expermineteren en nieuwe technieken uitproberen. Niks moet, alles mag.
+Maak jouw eigen vette, creatieve weblog, link dump, of playground... Hiermee ga je experimenteren en nieuwe technieken uitproberen. Niks moet, alles mag.
 
 NB: Je kunt een eigen domeinnaam koppelen aan jouw etalage. Vraag Justus om tips of hulp als je dit wilt doen.
 
