@@ -9,7 +9,7 @@
   <title>{config.title}</title>
 </svelte:head>
 
-<section>
+<!-- <section>
   <ul class="posts">
     {#each data.posts as post }
       <li class="post">
@@ -19,7 +19,7 @@
       </li>
     {/each}
   </ul>
-</section>
+</section> -->
 
 <section>
   <ul class="posts">
