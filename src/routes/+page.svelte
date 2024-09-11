@@ -22,7 +22,7 @@
 </section> -->
 
 <section>
-  <ul class="test">
+  <ul class="posts">
     {#each data.posts as post }
       <li class="post">
         <a href="sprint/{post.slug}" class="title">{post.title}</a>
