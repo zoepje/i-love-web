@@ -1,7 +1,5 @@
 import { error } from "@sveltejs/kit"
 
-export const prerender = 'auto'
-
 export async function load({params} : {params:any}) {
   try {
     const post = await import(`../../sprints/${params.slug}.md`)
