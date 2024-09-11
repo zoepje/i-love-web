@@ -110,6 +110,10 @@ body {
 	height: 100%;
 }
 
+body {
+	margin: var(--size-5);
+}
+
 html {
 	color: var(--text-1);
 	accent-color: var(--link);

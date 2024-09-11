@@ -25,7 +25,7 @@
 
 <style>
   nav {
-    padding-block: var(--size-7);
+    padding-block: var(--size-4);
   }
 
   .links {
