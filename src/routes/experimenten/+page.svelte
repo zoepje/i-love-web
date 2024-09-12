@@ -1,3 +1,11 @@
+<script lang="ts">
+	import * as config from '$lib/config'
+</script>
+
+<svelte:head>
+  <title>{config.title} - Experimenten</title>
+</svelte:head>
+
 <h1>Experimenten</h1>
 <p class="question">Wat gaat hier komen????? </p>
 <p class="upsiedownsies">Who knows!</p>
