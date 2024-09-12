@@ -116,7 +116,7 @@ body {
 
 html {
 	color: var(--text-1);
-	accent-color: var(--link);
+	accent-color: var(--color-1);
 	background-image: var(--background);
 	background-attachment: fixed;
 }
