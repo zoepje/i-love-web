@@ -40,9 +40,11 @@
 	.title {
 		font-size: var(--font-size-fluid-3);
 		text-transform: capitalize;
+    color: var(--color-1);
 	}
 
 	.date {
+    text-transform: capitalize;
 		color: var(--text-2);
 	}
 
