@@ -40,8 +40,12 @@
 	.title {
 		font-size: var(--font-size-fluid-3);
 		text-transform: capitalize;
-    color: var(--color-1);
+    color: var(--brand);
 	}
+
+  .title:visited{
+    color: var(--color-1);
+  }
 
 	.date {
     text-transform: capitalize;
