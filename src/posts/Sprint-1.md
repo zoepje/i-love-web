@@ -262,7 +262,7 @@ Om een [Figma components](https://help.figma.com/hc/en-us/articles/360038662654-
 1. Maak een tijdelijk kopie van de folder van de squadpage repo
 1. Installeer een clean install van SvelteKit voor de squadpage
 1. Voeg `/routes/+page.js` deze regel code toe `export let csr = false`
-1. Neem in `/lib/fetch-node.js` de code over uit hetzelfde bestand van je laatste node.js project van sprint 12
+1. Neem in `/lib/fetch-json.js` de code over uit hetzelfde bestand van je laatste node.js project van sprint 12
 1. Importeer deze functie in `/routes/+page.server.js`
 1. Check aan de hand van het voorbeeld of je alles goed gedaan hebt
 1. Copy / paste jullie toegevoegde svelte code terug in `/routes/+page.svelte`
