@@ -295,3 +295,17 @@ Epics zijn een handige manier om werk te organiseren en een hiërarchie te creë
 - implementatie icoon winkelmandje
 - Optelsom alle prijzen
 
+### MoSCoW
+<dl>
+<dt>Must haves:</dt>
+<dd>Dit moet af op de deadline als het niet af is dan is het project gefaald</dd>
+
+<dt>Should haves:</dt>
+<dd>Dit zou eigenlijk best wel af moeten, het project is een beetje jammer als het niet af is</dd>
+
+<dt>Could haves:</dt>
+<dd>Dit kan mits we tijd over hebben</dd>
+
+<dt>Want to have but will not have this time around:</dt>
+<dd>Dit zijn goede ideen en nuttig om te noteren maar we komen er nu niet aan toe</dd>
+</dl>
