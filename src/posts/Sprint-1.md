@@ -266,3 +266,32 @@ Om een [Figma components](https://help.figma.com/hc/en-us/articles/360038662654-
 1. Importeer deze functie in `/routes/+page.server.js`
 1. Check aan de hand van het voorbeeld of je alles goed gedaan hebt
 1. Copy / paste jullie toegevoegde svelte code terug in `/routes/+page.svelte`
+
+## 16 september 2024
+### Van epics naar (user)stories naar tasks
+Epics zijn een handige manier om werk te organiseren en een hiërarchie te creëren. Het idee is om werk op te splitsen in opleverbare stukken, zodat grote projecten kunnen worden afgerond en klanten op regelmatige basis waarde krijgen.
+
+**Voorbeelden van epics:**
+- Een nieuwe e-commerce website lanceren voor..
+- Een bestaande website verbetern voor..
+
+**Voorbeelden van stories:**
+- Een winkelmandje toevoegen
+- Betalingsmogelijkheden toevoegen
+- Een klantenserviceportal toevoegen
+
+**Voorbeelden van userstories:**
+- Als bezoeker, wil ik producten in mijn winkelmandje kunnen doen om overzicht te houden van wat ik aanschaf.
+- Als bezoeker, wil ik producten kunnen verwijderen uit mijn winkelmandje als ik iets gevoenden heb wat beter past bij wat ik nodig heb.
+- Als bezoeker, wil ik overzicht houden op het uit te geven bedrag zodat ik het gevoel heb in controle te zijn.
+
+**Voorbeelden van tasks:**
+- Database voor winkelmandje
+- Overzicht winkelmandje toten in HTML/CSS
+- Interface ontwerpen voor verwijderen producten
+- Interface ontwerpen voor aantal aanpassen
+- Verder shoppen interface/ doorgaan naar betaling
+- Icoon winkelmandje ontwerpen
+- implementatie icoon winkelmandje
+- Optelsom alle prijzen
+
