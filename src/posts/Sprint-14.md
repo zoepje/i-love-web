@@ -102,3 +102,22 @@ _Project/_
   - lib/
     - server/
   - index.js
+
+### Components 
+De meeste framework projecten ondersteunen componenten.
+
+```svelte
+--- /routes/+page.svelte
+<script>
+  import {Component} from '$lib'
+</script>
+
+<Component awnerToLife={42} />
+
+--- /lib/Component.svelte
+<script>
+  export let awnerToLife;
+</script>
+
+<p>The awnser is {awnerToLife}</p>
+```
