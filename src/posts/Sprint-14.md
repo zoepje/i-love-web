@@ -80,8 +80,25 @@ export async function load() {
 ```
 
 ### Binding
+Framework projecten hebben een manier om data te _binden_.
 
+```svelte
+<script>
+  let name = 'world'
+  $: shout = name + 'rocks!'
+</script>  
+
+<input bind:value={name} />
+
+<h1>Hello {name}!</h1>
+<p>{shout}</p>
+```
 
 ### Library
+De meeste framework projecten hebben een bibliotheekfunctie.
 
-### Components
+_Project/_
+- src/
+  - lib/
+    - server/
+  - index.js
