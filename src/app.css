@@ -179,9 +179,9 @@ li::marker {
 	margin-block: var(--size-4);
 }
 
-/* .prose p:not(blockquote + p) {
-	margin-top: auto;
-} */
+.prose p:is(blockquote p) {
+	margin-top: 0;
+}
 
 .prose :is(ul, ol) {
 	padding-left: var(--size-5);
