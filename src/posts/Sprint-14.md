@@ -19,7 +19,7 @@ Er zijn twee groepen technologie die onder het paraplubegrip Jamstack vallen:
 - Headless CMS (Bv: Directus)
 
 ## 30 september 2024
-> Sveltekit principles
+Sveltekit principles
 
 ### Structure
 Framework projecten hebben vaak een saaie vaste structuur.
@@ -121,3 +121,18 @@ De meeste framework projecten ondersteunen componenten.
 
 <p>The awnser is {awnerToLife}</p>
 ```
+
+## 2 oktopber 2024
+Desing critique
+
+### 10 principles of good design
+1. Good design is innovative
+2. Good design makes a product useful
+3. Good design is aesthetic
+4. Good design makes a product understandable 
+6. Good design is unobtrusive
+7. Good design is honest
+8. Good design is long-lasting
+9. Good design is thorough down to the last detail
+10. Good design is environmentally friendly
+11. Good design is as little design as possible
