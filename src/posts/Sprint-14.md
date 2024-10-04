@@ -5,6 +5,7 @@ date: '2024-09-23'
 categories:
   - svelte
   - sveltekit
+  - sprint
 published: True
 ---
 
