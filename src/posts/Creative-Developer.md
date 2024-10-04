@@ -11,27 +11,27 @@ published: True
 
 [Nicolas Garnier](https://nico.computer/)
 
-## What is a creative developer?
+### What is a creative developer?
 - Fancy term for dev with an eye for creativity. 
 - Uses all available toools to solve a creative & technical challenge
 - Website, apps, installatins
 - JS, CSS, WebGL, Processing, Unity
 
-## How can animations & interaction help?
+### How can animations & interaction help?
 - Create antiipatoin & surprise
 - Support the narrative & set the mood
 - Engage the user
 - Solve a design or technical challange 
 - Know your audience 
 
-### Examples
+#### Examples
 - [Vita Architecture](https://vitaarchitecture.com/)
 - [Lief Amsterdam](https://liefamsterdam.nl/)
 - [Loer](https://loerarchitecten.com/en)
 - [Fila mountain](https://filaexplore.com/)
 - [Alcest](https://alcestmusic.com/)
 
-## Conclusion
+### Conclusion
 - Think of animations and interactions as an extension to an original intent
 - Be open minded. Fun book to read: [nature of code](https://natureofcode.com/) 
 - Ask yourself what it brings and ask for feedback
