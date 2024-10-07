@@ -123,7 +123,7 @@ De meeste framework projecten ondersteunen componenten.
 <p>The awnser is {awnerToLife}</p>
 ```
 
-## 2 oktopber 2024
+## 2 oktober 2024
 Desing critique
 
 ### 10 principles of good design
@@ -137,3 +137,110 @@ Desing critique
 9. Good design is thorough down to the last detail
 10. Good design is environmentally friendly
 11. Good design is as little design as possible
+
+## 7 oktober 2024
+Projectmethodiek
+
+### Waterval vs. Agile
+<dl>
+  <dt>Specification-related paradigms:</dt> 
+  <dd>Alles staat helemaal uitgeschreven voordat je begint met bouwen. Er wordt heelveel gedocumenteert Wordt ookwel Waterval genoemt.</dd>
+
+  <dt>Comprehensice system</dt>
+  <dd>De develepment-life cycle. Itereerent werken. Ook wel Agile development genoemt</dd>
+</dl>
+
+### FDND Agile woordenlijst: Agile zelftest
+<dl>
+  <dt>Agile Development</dt>
+  <dd><dd>
+
+  <dt>Backlog</dt>
+  <dd>Alles wat nog gedaan moet worden en te wachten staat.</dd>
+
+  <dt>Business owner</dt>
+  <dd></dd>
+
+  <dt>Continuous Integration</dt>
+  <dd></dd>
+
+  <dt>Daily Scrum</dt>
+  <dd></dd>
+
+  <dt>Definition of done</dt>
+  <dd></dd>
+
+  <dt>Epic</dt>
+  <dd></dd>
+
+  <dt>Feature</dt>
+  <dd></dd>
+
+  <dt>Iteration</dt>
+  <dd></dd>
+
+  <dt>Minimal viable product</dt>
+  <dd></dd>
+
+  <dt>MoSCoW</dt>
+  <dd></dd>
+
+  <dt>Optimum viable product</dt>
+  <dd></dd>
+
+  <dt>Planning poker</dt>
+  <dd></dd>
+
+  <dt>Product owner</dt>
+  <dd></dd>
+
+  <dt>Refactoring</dt>
+  <dd></dd>
+
+  <dt>Retrospective</dt>
+  <dd></dd>
+
+  <dt>Release</dt>
+  <dd></dd>
+
+  <dt>Scrum</dt>
+  <dd></dd>
+
+  <dt>Scrum master</dt>
+  <dd></dd>
+
+  <dt>Scrum team</dt>
+  <dd></dd>
+
+  <dt>Sprint</dt>
+  <dd></dd>
+
+  <dt>Sprint goal</dt>
+  <dd></dd>
+
+  <dt>Sprint planning</dt>
+  <dd></dd>
+
+  <dt>Sprint review</dt>
+  <dd></dd>
+
+  <dt>Stand-up</dt>
+  <dd></dd>
+
+  <dt>Stakeholders</dt>
+  <dd></dd>
+
+  <dt>Task</dt>
+  <dd></dd>
+
+  <dt>Task board</dt>
+  <dd></dd>
+
+  <dt>Task points</dt>
+  <dd></dd>
+
+  <dt>Velocity</dt>
+  <dd></dd>
+</dl>
+
+### Nieuwe
