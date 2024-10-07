@@ -153,37 +153,37 @@ Projectmethodiek
 ### FDND Agile woordenlijst: Agile zelftest
 <dl>
   <dt>Agile Development</dt>
-  <dd><dd>
+  <dd>Werken in iteraties.<dd>
 
   <dt>Backlog</dt>
   <dd>Alles wat nog gedaan moet worden en te wachten staat.</dd>
 
   <dt>Business owner</dt>
-  <dd></dd>
+  <dd>Van wie het bedrijf is.</dd>
 
   <dt>Continuous Integration</dt>
-  <dd></dd>
+  <dd>Elke keer als er iets naar de main gepushed wordt. Komt het gelijk live te staan.</dd>
 
   <dt>Daily Scrum</dt>
-  <dd></dd>
+  <dd>Bespreking van wat je die dag hebt gedaan/ gaat doen. Met behulp van Stand-up en Checkout.</dd>
 
   <dt>Definition of done</dt>
-  <dd></dd>
+  <dd>Wat er af moet zijn voor het project.</dd>
 
   <dt>Epic</dt>
-  <dd></dd>
+  <dd>Wat het doel is van het project.</dd>
 
   <dt>Feature</dt>
-  <dd></dd>
+  <dd>Een onderdeel van een site.</dd>
 
   <dt>Iteration</dt>
-  <dd></dd>
+  <dd>Doorloping van de DCL.</dd>
 
   <dt>Minimal viable product</dt>
-  <dd></dd>
+  <dd>Alle must haves van je product afhebben.</dd>
 
   <dt>MoSCoW</dt>
-  <dd></dd>
+  <dd>Must haves, Should haves, Could haves and Won't have this time around.</dd>
 
   <dt>Optimum viable product</dt>
   <dd></dd>
@@ -240,7 +240,5 @@ Projectmethodiek
   <dd></dd>
 
   <dt>Velocity</dt>
-  <dd></dd>
+  <dd>De hoeveelheid poker punten je af hebt gekregen in een bepaalde periode.</dd>
 </dl>
-
-### Nieuwe
