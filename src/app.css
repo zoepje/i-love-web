@@ -110,10 +110,6 @@ body {
 	height: 100%;
 }
 
-body {
-	margin: var(--size-5);
-}
-
 html {
 	color: var(--text-1);
 	accent-color: var(--color-1);
@@ -232,4 +228,10 @@ li::marker {
 
 .prose img {
 	border: var(--color-1) var(--border-size-2) solid;
+}
+
+@media only screen and (min-width: 600px){
+	body {
+		margin: var(--size-5);
+	}
 }
