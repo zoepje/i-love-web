@@ -18,7 +18,7 @@ UX(user experinace), DX(developer experinace), CMX(content manegment experiance)
 ## 16 oktober 2024
 
 ### Directus
-Directus, Kevin. Directus is a backend with a UI. 
+Directus, Kevin Lewis. Directus is a backend with a UI. 
 Kevins developer experiance team (5 people) focuses on education, community engagement and extansions in the marketplace.
 Directus is not truely open source, but operates as if it is. 
 How they make money:
@@ -27,7 +27,7 @@ How they make money:
 - Marketplace 
 - Directus TV
 
-### Tradeoffs
+#### Tradeoffs
 Fast, good, cheap. 
 <dl>
   <dt>The Iron Triangle. </dt>
@@ -58,8 +58,45 @@ Helpful tools to make tradeoffs:
 - Swot analysis
 - Weighted decision matrix
 
-### Final toughts
+#### Final toughts
 - The tech you use probably doesn't matter
 - You're going to make shitty decisions
 - Root decisioins in user needs
 
+### Triple
+Shyanta Vleugel
+
+Onze core:
+- Development
+- Design 
+- Technical operations
+- Data and insights
+
+#### Wat kan invloed hebben op je tech-stack?
+- SEO Performance
+- Mechines met weinig performance?
+- Eenmalige website?
+- Wens voor animaties?
+- Wat heeft je eindproduct nodig?
+
+#### Tech tips
+- Don't repeat yourself
+- Gebruik van componenten is heilig, het framework waarin je giet staat hier los van.
+
+### Techstack onderzoek
+> Het is door logica dat we bewijzen. Het is door intuitie dat we ondekken.
+> - Henri Poincaré
+
+Logica is een systeem voor solide argumentatie.
+
+#### Argumentatie
+<dl>
+  <dt>Stap 1:</dt>
+  <dd>Formuleer een standpunt en selecteer argumenten.</dd>
+
+  <dt>Stap 2:</dt>
+  <dd>Maak een argumentatieschema.</dd>
+
+  <dt>Stap 3:</dt>
+  <dd>Beoordelen van aanvaardbaarheid.</dd>
+</dl>
