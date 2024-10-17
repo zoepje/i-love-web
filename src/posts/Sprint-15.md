@@ -187,5 +187,5 @@ Je kunt ook stukjes code in de layouts inlaaden. In de map `_includes` maak je e
 </head>
 ```
 
-> [!Note] 
+> :bulb: **Tip:**
 > Download extention nunjucks snippets
