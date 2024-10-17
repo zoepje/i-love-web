@@ -21,4 +21,4 @@ published: true
 - Screenreaders lezen echt alles voor.
 
 > "Maak leuke dingen!" 
-> Vasilis van Gemert
+> Vasilis van Gemer

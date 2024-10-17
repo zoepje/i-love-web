@@ -118,38 +118,47 @@ Ik heb ervoor gekozen om [Eleventy](https://www.11ty.dev/) als framework te gebr
 
   ```JS
     "scripts": {
-    "start": "npx @11ty/eleventy --serve",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+      "build": "npx @11ty/eleventy",
+      "start": "npx @11ty/eleventy --serve",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
   ```
   </dd>
 
   <dt>Stap 4:</dt>
-  <dd>Maak een bestant <code>.eleventy.js</code> aan waarin je defenieert wat voor templating taal je gaat gebruiken en waarin je de code hebt staan. Zoals alles in een map <code>src</code> zetten. Het gebruiken van een map <code>src</code> zorgt ervoor dat, je README en andere bestanden die niet bij de website horen maar wel op github, niet op je website komen te staan.
+  <dd>Maak een bestant <code>eleventy.config.js</code> aan waarin je defenieert wat voor templating taal je gaat gebruiken (in dit geval nunjucks) en waarin je de code hebt staan. Zoals alles in een map <code>src</code> zetten. Het gebruiken van een map <code>src</code> zorgt ervoor dat, je README en andere bestanden die niet bij de website horen maar wel op github, niet op je website komen te staan.
 
   ```JS
-    export default function (eleventyConfig) {
+  export default function (eleventyConfig) {
     return {
       dir: {
         input: 'src',
         includes: '_includes',
         output: '_site',
       },
-      templateFormats: ['md', 'njk', 'html'],
-      markdownTemplateEngine: 'njk',
-      htmlTemplateEngine: 'njk',
-      dataTemplateEngine: 'njk',
     }
   };
   ```
   </dd>
 
   <dt>Stap 5:</dt>
-  <dd>Maak in het mapje <code>src</code> een mapje <code>_includes</code> aan waarin je al je templates/components bewaart.</dd>
+  <dd>Maak in het mapje <code>src</code> een mapje <code>_includes</code> aan waarin je al je templates/components bewaart. Om components te gebruiken heb je een plugin <a href="https://www.11ty.dev/docs/languages/webc/">WebC</a> nodig. Deze installer je met <code> npm install @11ty/eleventy-plugin-webc</code>. Om ervoor te zorgen dat je components kunt gebruiken moet je dit aan de <code>eleventy.config.js</code> toevoegen:
+
+  ```JS
+  import pluginWebc from "@11ty/eleventy-plugin-webc";
+
+  export default function(eleventyConfig) {
+    eleventyConfig.addPlugin(pluginWebc, {
+      components: "src/_includes/components/*.webc",
+    });
+    //{...}
+  };
+  ```
+  </dd>
 </dl>
 
 ### Werken met layouts in 11ty
-In de map `_includes` maak nog een map aan met de naam `layouts` waarin je een html bestant kunt maken met een basis layout. Bijvoorbeeld `base.html`:
+In de map `_includes` maak nog een map aan met de naam `layouts` waarin je een html bestant kunt maken met een basis layout. Bijvoorbeeld `base.webc`:
 
 ```HTML
 <!DOCTYPE html>
@@ -157,33 +166,34 @@ In de map `_includes` maak nog een map aan met de naam `layouts` waarin je een h
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{title}}</title> <!-- Var die je kunt mee geven in het content bestant-->
+  <title>Document</title>
+  <style @html="this.getCSS(this.page.url)" webc:keep></style> <!--Haal de css op van component-->
 </head>
-<body>
-  {{ content | safe }} <!--- Het is veilig om hier de content te laden. -->
+<body @html="this.content"> <!--Laad de page content in. De tag moet leeg blijven, 
+  dus als je een header in de body wil. Moet je de content mee geven aan een ander element
+  bijvoorbeeld main -->
 </body>
 </html>
 ```
 
-Je kunt deze template gebruiken in een ander bestant bijvoorbeeld `index.html`:
+Je kunt deze template gebruiken in een ander bestant bijvoorbeeld `index.webc`:
 
 ```html
 ---
-layout: layouts/base.html
-title: Oncollaboration
+layout: "layouts/base.webc"
 ---
 
 <header>hello</header>
 <main>Hier komt wat text.</main>
 <footer>Copyright 2003</footer>
 ```
-Aangezien we in `.eleventy.js` hebben aangegeven dat HTML templating met de `njk` taal wordt geschreven, kunnen we met de hekjes "---" aangeven dat de `base.html` layout moet gebruiken voor deze pagina. Je kunt `title` ook gebruiken in de content zelf.
+Aangezien we in `.eleventy.js` hebben aangegeven dat HTML templating met de `njk` taal wordt geschreven, kunnen we met de hekjes "---" aangeven dat de `base.webc` layout moet gebruiken voor deze pagina. Je kunt `title` ook gebruiken in de content zelf.
 
-Je kunt ook stukjes code in de layouts inlaaden. In de map `_includes` maak je een bestant aan bijvoorbeeld `basehead.html` en deze kun je dan inladen in `base.html` met:
+Je kunt ook stukjes code in de layouts inlaaden. In de map `_includes` maak je een bestant aan bijvoorbeeld `basehead.webc` en deze kun je dan inladen in `base.webc` met:
 
 ```HTML
 <head>
-  {% include "basehead.html" %}
+  {% include "basehead.webc" %}
 </head>
 ```
 
@@ -193,11 +203,11 @@ Je kunt ook stukjes code in de layouts inlaaden. In de map `_includes` maak je e
 Als je een layout wilt hebben die lijkt op een andere layout maar met een kleine verandering kun je dat doen met: 
 
 ```HTML
-<!--base.html-->
+<!--base.webc-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    {% include "basehead.html" %}
+    {% include "basehead.webc" %}
     {% block head %}{% endblock %}
   </head>
   <body>
@@ -205,8 +215,8 @@ Als je een layout wilt hebben die lijkt op een andere layout maar met een kleine
   </body>
 </html>
 
-<!--extra.html-->
-{% extends "layout/base.html"%}
+<!--extra.webc-->
+{% extends "layout/base.webc"%}
 
 {% block head %}
   <meta name="description" content="{{description}}" />
@@ -217,7 +227,23 @@ Als je een layout wilt hebben die lijkt op een andere layout maar met een kleine
 Als je naar css en assets nu linkt dan werkt dit niet zoals je gewent bent. Je moet eerst in `.eleventy.js` dit toevoegen:
 
 ```JS
+export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/"); // doe dit met alle static mappen
+  //{...}
+};
 ```
 Je zegt nu tegen eleventy haal deze bestanden ook op en neem ze mee in de build van de site. Nu kun je assets linken zoals je gewent bent.
+
+Als je nu de css verandert dan refeshed elventy niet automatisch. Om dit wel mogelijk te maken voeg je in `.eleventy.js` dit toe:
+
+```JS
+export default function (eleventyConfig) {
+  //{...}
+  eleventyConfig.addWatchTarget("src/css/");
+  //{...}
+};
+```
+
+### Components
+Om werken met components in 11ty via PE kun je het beste  gebruiken.
 
