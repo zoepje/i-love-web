@@ -136,6 +136,10 @@ Ik heb ervoor gekozen om [Eleventy](https://www.11ty.dev/) als framework te gebr
         includes: '_includes',
         output: '_site',
       },
+      templateFormats: ['md', 'njk', 'html'],
+      markdownTemplateEngine: 'njk',
+      htmlTemplateEngine: 'njk',
+      dataTemplateEngine: 'njk',
     }
   };
   ```
@@ -146,8 +150,10 @@ Ik heb ervoor gekozen om [Eleventy](https://www.11ty.dev/) als framework te gebr
 
   ```JS
   import pluginWebc from "@11ty/eleventy-plugin-webc";
+  import { EleventyRenderPlugin } from "@11ty/eleventy";
 
   export default function(eleventyConfig) {
+    eleventyConfig.addPlugin(EleventyRenderPlugin);
     eleventyConfig.addPlugin(pluginWebc, {
       components: "src/_includes/components/*.webc",
     });
@@ -158,7 +164,7 @@ Ik heb ervoor gekozen om [Eleventy](https://www.11ty.dev/) als framework te gebr
 </dl>
 
 ### Werken met layouts in 11ty
-In de map `_includes` maak nog een map aan met de naam `layouts` waarin je een html bestant kunt maken met een basis layout. Bijvoorbeeld `base.webc`:
+In de map `_includes` maak nog een map aan met de naam `layouts` waarin je een html bestant kunt maken met een basis layout. Bijvoorbeeld `base.html`:
 
 ```HTML
 <!DOCTYPE html>
@@ -166,34 +172,36 @@ In de map `_includes` maak nog een map aan met de naam `layouts` waarin je een h
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style @html="this.getCSS(this.page.url)" webc:keep></style> <!--Haal de css op van component-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <title>{{title}}</title>
 </head>
-<body @html="this.content"> <!--Laad de page content in. De tag moet leeg blijven, 
-  dus als je een header in de body wil. Moet je de content mee geven aan een ander element
-  bijvoorbeeld main -->
+<body>
+  {{ content | safe }}
 </body>
 </html>
 ```
 
-Je kunt deze template gebruiken in een ander bestant bijvoorbeeld `index.webc`:
+Je kunt deze template gebruiken in een ander bestant bijvoorbeeld `index.html`:
 
 ```html
 ---
-layout: "layouts/base.webc"
+layout: "layouts/base.html"
+title: "Demo"
 ---
 
 <header>hello</header>
 <main>Hier komt wat text.</main>
 <footer>Copyright 2003</footer>
 ```
-Aangezien we in `.eleventy.js` hebben aangegeven dat HTML templating met de `njk` taal wordt geschreven, kunnen we met de hekjes "---" aangeven dat de `base.webc` layout moet gebruiken voor deze pagina. Je kunt `title` ook gebruiken in de content zelf.
+Aangezien we in `.eleventy.js` hebben aangegeven dat HTML templating met de `njk` taal wordt geschreven, kunnen we met de hekjes "---" aangeven dat de `base.html` layout moet gebruiken voor deze pagina. Je kunt `title` ook gebruiken in de content zelf.
 
-Je kunt ook stukjes code in de layouts inlaaden. In de map `_includes` maak je een bestant aan bijvoorbeeld `basehead.webc` en deze kun je dan inladen in `base.webc` met:
+Je kunt ook stukjes code in de layouts inlaaden. In de map `_includes` maak je een bestant aan bijvoorbeeld `basehead.html` en deze kun je dan inladen in `base.html` met:
 
 ```HTML
 <head>
-  {% include "basehead.webc" %}
+  {% include "basehead.html" %}
 </head>
 ```
 
@@ -203,11 +211,11 @@ Je kunt ook stukjes code in de layouts inlaaden. In de map `_includes` maak je e
 Als je een layout wilt hebben die lijkt op een andere layout maar met een kleine verandering kun je dat doen met: 
 
 ```HTML
-<!--base.webc-->
+<!--base.html-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    {% include "basehead.webc" %}
+    {% include "basehead.html" %}
     {% block head %}{% endblock %}
   </head>
   <body>
@@ -215,8 +223,8 @@ Als je een layout wilt hebben die lijkt op een andere layout maar met een kleine
   </body>
 </html>
 
-<!--extra.webc-->
-{% extends "layout/base.webc"%}
+<!--basehead.html-->
+{% extends "layout/base.html"%}
 
 {% block head %}
   <meta name="description" content="{{description}}" />
@@ -245,5 +253,12 @@ export default function (eleventyConfig) {
 ```
 
 ### Components
-Om werken met components in 11ty via PE kun je het beste  gebruiken.
+WebC componenten gebruiken dezelfde naam als het bestands naam, dus als je `navigation.webc` heet het componenent `<navigation>`. Je kunt bijvoorbeeld ook het component dezelfde naam geven als een element, zoals `<footer>` dit zorgt ervoor dat overal waar je footer gebruikt dit component wordt ingeladen.
 
+```html
+  {% renderTemplate "webc" %}
+  <navigation></navigation>
+  {% endrenderTemplate %}
+```
+
+Je kunt ook met slots werken. Zie hier meer over op [introduction webc slots](https://11ty.rocks/posts/introduction-webc/#slots).
