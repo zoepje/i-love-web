@@ -85,7 +85,7 @@ Onze core:
 
 ### Techstack onderzoek
 > Het is door logica dat we bewijzen. Het is door intuitie dat we ondekken.
-> - Henri Poincaré
+> Henri Poincaré
 
 Logica is een systeem voor solide argumentatie.
 
@@ -107,13 +107,14 @@ Ik heb ervoor gekozen om [Eleventy](https://www.11ty.dev/) als framework te gebr
 ### Setup Eleventy
 <dl>
   <dt>Stap 1:</dt>
-  <dd>Maak een package.json aan door in de terminal het commando `npm init -y` uit te voeren. Als je wilt werken met [ESM en niet CommonJS](https://www.11ty.dev/docs/cjs-esm/) voer dan ook dit commando uit `npm pkg set type="module"`</dd>
+  <dd> Maak een package.json aan door in de terminal het commando <code>npm init -y</code> uit te voeren. Als je wilt werken met <a href="https://www.11ty.dev/docs/cjs-esm/">ESM en niet CommonJS</a> voer dan ook dit commando uit <code>npm pkg set type="module"</code></dd>
 
   <dt>Stap 2:</dt>
-  <dd>Installeer 11nty met het commando `npm install @11ty/eleventy`</dd>
+  <dd>Installeer 11nty met het commando <code>npm install @11ty/eleventy</code>
+  </dd>
 
   <dt>Stap 3:</dt>
-  <dd>Open eleventy op localhost met `npx @11ty/eleventy --serve`. Je kunt ook in de package.json dit als script toevoegen. Dan voer je `npm start` uit om de localhost op te starten.
+  <dd>Open eleventy op localhost met <code>npx @11ty/eleventy --serve</code>. Je kunt ook in de package.json dit als script toevoegen. Dan voer je <code>npm start</code> uit om de localhost op te starten.
 
   ```JS
     "scripts": {
@@ -124,7 +125,7 @@ Ik heb ervoor gekozen om [Eleventy](https://www.11ty.dev/) als framework te gebr
   </dd>
 
   <dt>Stap 4:</dt>
-  <dd>Maak een bestant `.eleventy.js` aan waarin je defenieert wat voor templating taal je gaat gebruiken en waarin je de code hebt staan. Zoals alles in een map `src` zetten. Het gebruiken van een map `src` zorgt ervoor dat, je README en andere bestanden die niet bij de website horen maar wel op github, niet op je website komen te staan.
+  <dd>Maak een bestant <code>.eleventy.js</code> aan waarin je defenieert wat voor templating taal je gaat gebruiken en waarin je de code hebt staan. Zoals alles in een map <code>src</code> zetten. Het gebruiken van een map <code>src</code> zorgt ervoor dat, je README en andere bestanden die niet bij de website horen maar wel op github, niet op je website komen te staan.
 
   ```JS
     export default function (eleventyConfig) {
@@ -144,7 +145,7 @@ Ik heb ervoor gekozen om [Eleventy](https://www.11ty.dev/) als framework te gebr
   </dd>
 
   <dt>Stap 5:</dt>
-  <dd>Maak in het mapje `src` een mapje `_includes` aan waarin je al je templates/components bewaart</dd>
+  <dd>Maak in het mapje <code>src</code> een mapje <code>_includes</code> aan waarin je al je templates/components bewaart.</dd>
 </dl>
 
 ### Werken met layouts in 11ty

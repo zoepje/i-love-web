@@ -20,4 +20,5 @@ published: true
 - Ga erin veder dan de standaard richtlijnen. Denk er echt overna hoe mensen met beperkingen gebruik zouden kunnen maken van je website.
 - Screenreaders lezen echt alles voor.
 
-> "Maak leuke dingen!" - Vasilis van Gemert
+> "Maak leuke dingen!" 
+> Vasilis van Gemert
