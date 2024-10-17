@@ -177,4 +177,15 @@ title: Oncollaboration
 <main>Hier komt wat text.</main>
 <footer>Copyright 2003</footer>
 ```
-Aangezien we in `.eleventy.js` hebben aangegeven dat HTML templating met de `njk` taal wordt geschreven, kunnen we met de hekjes "---" aangeven dat de base.html layout moet gebruiken voor deze pagina. Je kunt `title` ook gebruiken in de content zelf.
+Aangezien we in `.eleventy.js` hebben aangegeven dat HTML templating met de `njk` taal wordt geschreven, kunnen we met de hekjes "---" aangeven dat de `base.html` layout moet gebruiken voor deze pagina. Je kunt `title` ook gebruiken in de content zelf.
+
+Je kunt ook stukjes code in de layouts inlaaden. In de map `_includes` maak je een bestant aan bijvoorbeeld `basehead.html` en deze kun je dan inladen in `base.html` met:
+
+```HTML
+<head>
+  {% include "basehead.html" %}
+</head>
+```
+
+> [!Note] 
+> Download extention nunjucks snippets
