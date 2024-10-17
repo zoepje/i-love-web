@@ -189,3 +189,35 @@ Je kunt ook stukjes code in de layouts inlaaden. In de map `_includes` maak je e
 
 > 💡 **Tip:**
 > Download extention nunjucks snippets
+
+Als je een layout wilt hebben die lijkt op een andere layout maar met een kleine verandering kun je dat doen met: 
+
+```HTML
+<!--base.html-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "basehead.html" %}
+    {% block head %}{% endblock %}
+  </head>
+  <body>
+    {{ content | safe }}
+  </body>
+</html>
+
+<!--extra.html-->
+{% extends "layout/base.html"%}
+
+{% block head %}
+  <meta name="description" content="{{description}}" />
+{% endblock %}
+```
+
+### CSS en Assets
+Als je naar css en assets nu linkt dan werkt dit niet zoals je gewent bent. Je moet eerst in `.eleventy.js` dit toevoegen:
+
+```JS
+  eleventyConfig.addPassthroughCopy("src/assets/"); // doe dit met alle static mappen
+```
+Je zegt nu tegen eleventy haal deze bestanden ook op en neem ze mee in de build van de site. Nu kun je assets linken zoals je gewent bent.
+
