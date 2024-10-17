@@ -100,3 +100,80 @@ Logica is een systeem voor solide argumentatie.
   <dt>Stap 3:</dt>
   <dd>Beoordelen van aanvaardbaarheid.</dd>
 </dl>
+
+## 17 oktober 2024
+Ik heb ervoor gekozen om [Eleventy](https://www.11ty.dev/) als framework te gebruiken. Van de documentatie die ik tot nu toe heb gelezen lijkt het erop dat je dit goed kunt gebruiken met Markdown.
+
+### Setup Eleventy
+<dl>
+  <dt>Stap 1:</dt>
+  <dd>Maak een package.json aan door in de terminal het commando `npm init -y` uit te voeren. Als je wilt werken met [ESM en niet CommonJS](https://www.11ty.dev/docs/cjs-esm/) voer dan ook dit commando uit `npm pkg set type="module"`</dd>
+
+  <dt>Stap 2:</dt>
+  <dd>Installeer 11nty met het commando `npm install @11ty/eleventy`</dd>
+
+  <dt>Stap 3:</dt>
+  <dd>Open eleventy op localhost met `npx @11ty/eleventy --serve`. Je kunt ook in de package.json dit als script toevoegen. Dan voer je `npm start` uit om de localhost op te starten.
+
+  ```JS
+    "scripts": {
+    "start": "npx @11ty/eleventy --serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  ```
+  </dd>
+
+  <dt>Stap 4:</dt>
+  <dd>Maak een bestant `.eleventy.js` aan waarin je defenieert wat voor templating taal je gaat gebruiken en waarin je de code hebt staan. Zoals alles in een map `src` zetten. Het gebruiken van een map `src` zorgt ervoor dat, je README en andere bestanden die niet bij de website horen maar wel op github, niet op je website komen te staan.
+
+  ```JS
+    export default function (eleventyConfig) {
+    return {
+      dir: {
+        input: 'src',
+        includes: '_includes',
+        output: '_site',
+      },
+      templateFormats: ['md', 'njk', 'html'],
+      markdownTemplateEngine: 'njk',
+      htmlTemplateEngine: 'njk',
+      dataTemplateEngine: 'njk',
+    }
+  };
+  ```
+  </dd>
+
+  <dt>Stap 5:</dt>
+  <dd>Maak in het mapje `src` een mapje `_includes` aan waarin je al je templates/components bewaart</dd>
+</dl>
+
+### Werken met layouts in 11ty
+In de map `_includes` maak nog een map aan met de naam `layouts` waarin je een html bestant kunt maken met een basis layout. Bijvoorbeeld `base.html`:
+
+```HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}}</title> <!-- Var die je kunt mee geven in het content bestant-->
+</head>
+<body>
+  {{ content | safe }} <!--- Het is veilig om hier de content te laden. -->
+</body>
+</html>
+```
+
+Je kunt deze template gebruiken in een ander bestant bijvoorbeeld `index.html`:
+
+```html
+---
+layout: layouts/base.html
+title: Oncollaboration
+---
+
+<header>hello</header>
+<main>Hier komt wat text.</main>
+<footer>Copyright 2003</footer>
+```
+Aangezien we in `.eleventy.js` hebben aangegeven dat HTML templating met de `njk` taal wordt geschreven, kunnen we met de hekjes "---" aangeven dat de base.html layout moet gebruiken voor deze pagina. Je kunt `title` ook gebruiken in de content zelf.
