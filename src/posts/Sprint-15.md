@@ -261,4 +261,6 @@ WebC componenten gebruiken dezelfde naam als het bestands naam, dus als je `navi
   {% endrenderTemplate %}
 ```
 
+Om de styling van het component mee te geven moet je in het component aan de `<style>` [web:keep](https://www.11ty.dev/docs/languages/webc/#webckeep) toevoegen. Het zelfde geld ook voor `<script>`.
+
 Je kunt ook met slots werken. Zie hier meer over op [introduction webc slots](https://11ty.rocks/posts/introduction-webc/#slots).
