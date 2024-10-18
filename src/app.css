@@ -226,6 +226,9 @@ li::marker {
 	color: var(--color-3);
 }
 
+.prose dd {
+	max-inline-size: var(--size-content-3);
+}	
 .prose img {
 	border: var(--color-1) var(--border-size-2) solid;
 }
