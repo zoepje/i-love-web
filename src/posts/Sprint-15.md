@@ -146,20 +146,24 @@ Ik heb ervoor gekozen om [Eleventy](https://www.11ty.dev/) als framework te gebr
   </dd>
 
   <dt>Stap 5:</dt>
-  <dd>Maak in het mapje <code>src</code> een mapje <code>_includes</code> aan waarin je al je templates/components bewaart. Om components te gebruiken heb je een plugin <a href="https://www.11ty.dev/docs/languages/webc/">WebC</a> nodig. Deze installer je met <code> npm install @11ty/eleventy-plugin-webc</code>. Om ervoor te zorgen dat je components kunt gebruiken moet je dit aan de <code>eleventy.config.js</code> toevoegen:
+  <dd>Maak in het mapje <code>src</code> een mapje <code>_includes</code> aan waarin je al je templates/components bewaart. Om components te gebruiken heb je een plugin nodig. Je kunt <a href="https://www.11ty.dev/docs/languages/webc/">WebC</a> gebruiken, of <a href="">Shortcodes</a>. 
+  
+    <dt>WebC:<dt>
+    <dd>Deze installer je met <code> npm install @11ty/eleventy-plugin-webc</code>. Om ervoor te zorgen dat je components kunt gebruiken moet je dit aan de <code>eleventy.config.js</code> toevoegen:
 
-  ```JS
-  import pluginWebc from "@11ty/eleventy-plugin-webc";
-  import { EleventyRenderPlugin } from "@11ty/eleventy";
+    ```JS
+    import pluginWebc from "@11ty/eleventy-plugin-webc";
+    import { EleventyRenderPlugin } from "@11ty/eleventy";
 
-  export default function(eleventyConfig) {
-    eleventyConfig.addPlugin(EleventyRenderPlugin);
-    eleventyConfig.addPlugin(pluginWebc, {
-      components: "src/_includes/components/*.webc",
-    });
-    //{...}
-  };
-  ```
+    export default function(eleventyConfig) {
+      eleventyConfig.addPlugin(EleventyRenderPlugin);
+      eleventyConfig.addPlugin(pluginWebc, {
+        components: "src/_includes/components/*.webc",
+      });
+      //{...}
+    };
+    ```
+    </dd>
   </dd>
 </dl>
 
@@ -252,7 +256,7 @@ export default function (eleventyConfig) {
 };
 ```
 
-### Components
+### Components WebC
 WebC componenten gebruiken dezelfde naam als het bestands naam, dus als je `navigation.webc` heet het componenent `<navigation>`. Je kunt bijvoorbeeld ook het component dezelfde naam geven als een element, zoals `<footer>` dit zorgt ervoor dat overal waar je footer gebruikt dit component wordt ingeladen.
 
 ```html
@@ -268,6 +272,6 @@ Het is ook handig om [webc:scoped](https://www.11ty.dev/docs/languages/webc/#web
 Je kunt ook met slots werken. Zie hier meer over op [introduction webc slots](https://11ty.rocks/posts/introduction-webc/#slots).
 
 ## 21 oktober 2024
-Schets je ontwikkeling recap van vorig jaar.
+### Components Shortcodes
 
 
