@@ -148,7 +148,7 @@ Ik heb ervoor gekozen om [Eleventy](https://www.11ty.dev/) als framework te gebr
   <dt>Stap 5:</dt>
   <dd>Maak in het mapje <code>src</code> een mapje <code>_includes</code> aan waarin je al je templates/components bewaart. Om components te gebruiken heb je een plugin nodig. Je kunt <a href="https://www.11ty.dev/docs/languages/webc/">WebC</a> gebruiken, of <a href="https://www.11ty.dev/docs/shortcodes/">Shortcodes</a>. 
   
-  **WebC:**
+  <strong>WebC:</strong>
   Deze installer je met <code> npm install @11ty/eleventy-plugin-webc</code>. Om ervoor te zorgen dat je components kunt gebruiken moet je dit aan de <code>eleventy.config.js</code> toevoegen:
 
   ```JS
