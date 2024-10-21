@@ -266,3 +266,8 @@ Om de styling van het component mee te geven moet je in het component aan de `<s
 Het is ook handig om [webc:scoped](https://www.11ty.dev/docs/languages/webc/#webcscoped) toe te voegen aan de styling zodat je styling alleen maar gebruikt wordt op het component. En als je styling later toevoeged aan de pagina dat je niet de styling van je component mee zit te spelen. Dit is iets dat svelte al automatisch doet maar in eleventy moet je het aangeven.
 
 Je kunt ook met slots werken. Zie hier meer over op [introduction webc slots](https://11ty.rocks/posts/introduction-webc/#slots).
+
+## 21 oktober 2024
+Schets je ontwikkeling recap van vorig jaar.
+
+
