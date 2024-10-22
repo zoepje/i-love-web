@@ -272,7 +272,39 @@ Het is ook handig om [webc:scoped](https://www.11ty.dev/docs/languages/webc/#web
 
 Je kunt ook met slots werken. Zie hier meer over op [introduction webc slots](https://11ty.rocks/posts/introduction-webc/#slots).
 
-## 21 oktober 2024
+## 22 oktober 2024
 ### Components Shortcodes
+Je maakt een js bestand aan voor je component. In dit bestant maak je een functie aan met dezelfde naam als het component. Aan deze functie kun je variabelen door geven, dit is fijn voor als je met dynamic data gaat spelen. Alle JavaScript wordt uitgevoord server side dus de gebruiker merkt er niks van.
 
+```JS
+//Navigation.js
+export function Navigation({currentPageUrl}){
+return `
+    <nav class="menu">
+      <ul>
+        <li>
+          <a href="/" class="${currentPageUrl === "/" ? "active" : ""}">
+            <svg class='icon' xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>Home
+          </a>
+        </li>
+    </nav>`
+}  
+```
 
+```JS
+//eleventy.config.js
+import { Navigation } from "./src/_includes/components/Navigation.js";
+
+export default function (eleventyConfig) {
+  // Components:
+  eleventyConfig.addShortcode("navigation", Navigation);
+} 
+```
+
+```html
+  <header>
+    {% navigation currentPageUrl=page.url%}
+  </header>
+```
+
+Er moet vast wel een manier zijn om css scoped door tegeven maar ik heb daar nog niks van gevonden. Dus gewoon met classes werken.
