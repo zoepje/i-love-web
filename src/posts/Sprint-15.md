@@ -308,3 +308,53 @@ export default function (eleventyConfig) {
 ```
 
 Er moet vast wel een manier zijn om css scoped door tegeven maar ik heb daar nog niks van gevonden. Dus gewoon met classes werken.
+
+## 24 october 2024
+### Fetch data uit database
+Je kunt een plugin [eleventy-fetch](https://www.11ty.dev/docs/plugins/fetch/) toevoegen dat het fetchen van data heel makkelijk maakt. Dit doe je met `npm install @11ty/eleventy-fetch`.
+
+Je maakt dan een map `_data` in `src` aan, in deze map maak je een javascript document aan waarin je de fetch gaat schrijven.
+
+```js
+import EleventyFetch from "@11ty/eleventy-fetch"
+
+const baseURL = 'https://fdnd-agency.directus.app/items/'
+
+export default async function (){
+  const webinar = `${baseURL}avl_webinars`
+  const response = await EleventyFetch(webinar, {
+    duration: "1d",
+    type: "json"
+  });
+
+  const webinars = response.data;
+
+  return webinars;
+}
+```
+
+Als je met dit gaat werken is moet je `.cache` toevoegen aan je `.gitignore`, zodat de data niet naar je git wordt gestuurd.
+
+Je kunt deze data ophalen met het naam van het bestand `{{webinars | dump }}`, dit laat alle JSON op je pagina zien.
+
+### Loops met components erin
+Deze data die je ophaalt wil je nettjes in je website laden. Dit kun je doen met een for loop.
+
+```nunjucks
+{% for webinar in webinars %}
+  <h2>{{ webinar.title }}</h2>
+{% endfor %}  
+```
+
+Als je werkt met componenten kun je dit zo doen:
+```nunjucks
+    {% for webinar in webinars %}
+
+      {% WebinarOverview slug=webinar.slug, thumbnail=webinar.thumbnail, duration=webinar.duration, title=webinar.title, speakers=webinar.speakers, categories=webinar.categories %}
+
+    {% endfor %}
+```
+Zoals je ziet doe je geen dubbele haakjes "{{}}" om de variabelen, dit is omdat in nunjucks hij automatisch weet dat het een variable is. Als je het wel tussen haakjes doet dan geeft hij een error.
+
+### Dynamische paginas
+In svelte kun je heel makkelijk een dynamische pagina maken door een mapje `[slug]` aan te maken. Dit werkt anders in 11ty. Je kunt in eleventy gebruik maken van [pagination](https://www.11ty.dev/docs/pagination/)
