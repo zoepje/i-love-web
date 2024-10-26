@@ -340,21 +340,34 @@ Je kunt deze data ophalen met het naam van het bestand `{{webinars | dump }}`, d
 ### Loops met components erin
 Deze data die je ophaalt wil je nettjes in je website laden. Dit kun je doen met een for loop.
 
-```nunjucks
+```html
 {% for webinar in webinars %}
   <h2>{{ webinar.title }}</h2>
 {% endfor %}  
 ```
 
 Als je werkt met componenten kun je dit zo doen:
-```nunjucks
-    {% for webinar in webinars %}
+```html
+{% for webinar in webinars %}
 
-      {% WebinarOverview slug=webinar.slug, thumbnail=webinar.thumbnail, duration=webinar.duration, title=webinar.title, speakers=webinar.speakers, categories=webinar.categories %}
+  {% WebinarOverview slug=webinar.slug, thumbnail=webinar.thumbnail, duration=webinar.duration, title=webinar.title, speakers=webinar.speakers, categories=webinar.categories %}
 
-    {% endfor %}
+{% endfor %}
 ```
 Zoals je ziet doe je geen dubbele haakjes "{{}}" om de variabelen, dit is omdat in nunjucks hij automatisch weet dat het een variable is. Als je het wel tussen haakjes doet dan geeft hij een error.
 
 ### Dynamische paginas
-In svelte kun je heel makkelijk een dynamische pagina maken door een mapje `[slug]` aan te maken. Dit werkt anders in 11ty. Je kunt in eleventy gebruik maken van [pagination](https://www.11ty.dev/docs/pagination/)
+In svelte kun je heel makkelijk een dynamische pagina maken door een mapje `[slug]` aan te maken. Dit werkt anders in 11ty. Je kunt in eleventy gebruik maken van [pagination](https://www.11ty.dev/docs/pagination/). Dit is ontzetten makkelijk je zet maakt een document in het mapje layouts en daarin zet je boven aan de pagina de pagination details die je nodig hebt. Je gebruikt size 1 omdat je maar object uit de data wilt halen per pagina. Achter de permalink moet je `/index.html` doen zodat eleventy weet dat het een webpagina is.
+
+```html
+---
+pagination:
+  data: webinars
+  size: 1
+  alias: webinar
+permalink: webinars/{{webinar.slug}}/index.html
+---
+
+<h1>{{webinar.title}}</h1>
+<p>{{webinar.description}}</p>
+```
