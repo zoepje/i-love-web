@@ -19,6 +19,12 @@ Het zorgt ervoor dat het product een consistente uitstraling en gevoel heeft en 
 
 Met componentenbibiliotheken kunnen ontwerpers en ontwikkelaar snel nieuwe functies en paginas toevoegen, terwijl de algehele ontwerpconsistente en kwaliteit behouden blijft.
 
-### Component building block
+### Morphological chart
+Morphological charts are used in product design and are particularly useful to come up with unexpected alternatives for complex designs. Their origin lies in the field of industrial product design.
 
-## 12 november 2024
+**Benodigdheden:**
+- Wil om veel varianten van een app te bedenken
+- Een systematische manier van werken
+- Een vel A3 papier en tekenmaterialen
+- Een analyse van onderdelen van je component
+
