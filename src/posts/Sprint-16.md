@@ -6,6 +6,7 @@ categories:
   - sprint
 published: True
 ---
+
 ## Table of Contents
 
 ## 11 november 2024
@@ -19,3 +20,5 @@ Het zorgt ervoor dat het product een consistente uitstraling en gevoel heeft en 
 Met componentenbibiliotheken kunnen ontwerpers en ontwikkelaar snel nieuwe functies en paginas toevoegen, terwijl de algehele ontwerpconsistente en kwaliteit behouden blijft.
 
 ### Component building block
+
+## 12 november 2024
