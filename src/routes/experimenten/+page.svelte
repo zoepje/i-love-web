@@ -13,15 +13,19 @@
 
 <p class="upsiedownsies">Who knows!</p>
 
-<div>
+<div class="gradient">
   <p>Open props is so nice to work with!!</p>
 </div>
 
 <style>
-  .variable-fonts p {
-    font-family: 'Decovar Alpha';
-    text-align: right;
-    color: var(--color-2);
+  .variable-fonts {
+    height: var(--size-15);
+    
+    & p {
+      font-family: 'Decovar Alpha';
+      text-align: right;
+      color: var(--color-2);
+    }
   }
 
   p.upsiedownsies{
@@ -31,7 +35,7 @@
     color: var(--color-1);
   }
 
-  div {
+  .gradient {
     height: var(--size-15);
     background: var(--gradient-10);
 
