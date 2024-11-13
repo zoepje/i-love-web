@@ -34,12 +34,15 @@ Zet de fonts naast elkaar met alle woorden die je gaat gebruiken op je website. 
 
 
 **Micro-Typography**
-- tracking and glyph-width
-- protrusion, margin kerning, or hanging punctuation
-- 
+- Tracking and glyph-width (font-kerning, font-variation-settings)
+- Protrusion, margin kerning, or hanging punctuation
+- Punctually increasing or decreasing word space
+- Chunking words through word spacing or other with space (word-spacing, letter-spacing)
 
 **Macro-Typogrphy**
-- kjkkdkkdkd
+- The format: the basic dimensions within which we set type (font, line-height)
+- The grid: type size, proportion of columns (columns, word-break, hyphens)
+- The hierarchy: how the different type sizes and the formatting relate to each other (heading)
 
 A complete collection of web safe CSS font stacks https://www.cssfontstack.com
 
@@ -47,3 +50,21 @@ A complete collection of web safe CSS font stacks https://www.cssfontstack.com
 Variable fonts are an evolution of the OpenType font specification that enables many different variations of a typeface to be incorporated into a single filte, rather than having a separate font file fot every width, weight, or style. https://variablefonts.io
 
 Je kunt kijken of je font een variable font is op https://wakamaifondue.com
+
+### Visuele hiërarchie
+Visuele hiërarchie kun je op verschillende manieren bereiken, zoals:
+- Grootte
+- Positie op het scherm
+- Witruimte
+- Kleur / contrast
+- Animatie
+
+#### The inverted pyramid
+3 niveau's van visuele hiërarchie:
+- Belangrijkste informatie
+- Belangrijke details
+- Achtergrondinformatie
+
+
+### Modular scale
+A modular scale is a sequence of numbers that relate to one another in a meaningful way. Using the golden ratio, for eample, we can produce values for a modular scale by multiplying by 1.618 to arrive at the next highest number, or dividing by 1.618 to arrive at the next number down.
