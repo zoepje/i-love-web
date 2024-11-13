@@ -1,6 +1,11 @@
 @import '@fontsource/manrope';
 @import '@fontsource/jetbrains-mono';
 
+@font-face {
+	font-family: 'Decovar Alpha';
+	src: url(static/fonts/Decovar_Alpha_VF_Font.ttf);
+}
+
 html {
 	/* font */
 	--font-sans: 'Manrope', sans-serif;

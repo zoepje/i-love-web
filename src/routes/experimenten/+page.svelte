@@ -7,7 +7,10 @@
 </svelte:head>
 
 <h1>Experimenten</h1>
-<p class="question">Wat gaat hier komen????? </p>
+<div class="variable-fonts">
+  <p>The five boxing wizards jump quicly.</p>
+</div> 
+
 <p class="upsiedownsies">Who knows!</p>
 
 <div>
@@ -15,7 +18,8 @@
 </div>
 
 <style>
-  p.question{
+  .variable-fonts p {
+    font-family: 'Decovar Alpha';
     text-align: right;
     color: var(--color-2);
   }
