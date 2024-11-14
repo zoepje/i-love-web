@@ -3,7 +3,7 @@
 
 @font-face {
 	font-family: 'Decovar Alpha';
-	src: url(static/fonts/Decovar_Alpha_VF_Font.ttf);
+	src: url(/fonts/Decovar_Alpha_VF_Font.ttf);
 }
 
 html {
