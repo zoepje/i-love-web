@@ -65,6 +65,24 @@ Visuele hiërarchie kun je op verschillende manieren bereiken, zoals:
 - Belangrijke details
 - Achtergrondinformatie
 
-
 ### Modular scale
 A modular scale is a sequence of numbers that relate to one another in a meaningful way. Using the golden ratio, for eample, we can produce values for a modular scale by multiplying by 1.618 to arrive at the next highest number, or dividing by 1.618 to arrive at the next number down.
+
+## 18 november 2024
+Het gdbruik van een component library:
+- Versnelt ontwikkeling door hergebruik => grotere kans op fouten
+- Zorgt voor consistentie in projecten => alles ziet er hetzelfde uit
+- Vergroot de onderhoudbaarheid => vergroot de chaos
+
+### Metanaamgeving
+Een hiërarchische benadering om het over bepaalde soorten componenten te hebben. In principe is alles component maar hoe noemen we:
+- Geneste componenten
+- Variaties op componenten
+- sjjd
+
+Je kunt je mappen indelen op verschillende manieren:
+- Page-section-component
+- Functional layering
+- LEGO
+- Atomic design
+- Presenter-Container
