@@ -255,7 +255,7 @@ li::marker {
 }
 
 :where(a[href]) svg path {
-	color: var(--brand, var(--link));
+	fill: var(--brand, var(--link));
 }
 
 :where(a[href]):where(:visited) svg path {
