@@ -8,10 +8,17 @@
   <a href="/" 
      on:click="{() => current = 0}"
      class="title" class:active="{current === 0}">
-    Journal
+    Home
   </a>
 
   <ul class="links">
+    <li>
+      <a href="/notes"
+         on:click="{() => current = 3}"
+         class:active="{current === 3}">
+        Notes
+      </a>
+    </li>
     <li>
       <a href="/experimenten"
          on:click="{() => current = 1}"
@@ -24,13 +31,6 @@
          on:click="{() => current = 2}"
          class:active="{current === 2}">
         About
-      </a>
-    </li>
-    <li>
-      <a href="/contact"
-         on:click="{() => current = 3}"
-         class:active="{current === 3}">
-        Contact
       </a>
     </li>
   </ul>
