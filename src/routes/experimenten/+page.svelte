@@ -8,39 +8,27 @@
 
 <h1>Experimenten</h1>
 <div class="variable-fonts">
+  <h2>Font animation</h2>
   <p>The five boxing wizards jump quicly.</p>
 </div> 
 
-<p class="upsiedownsies">Who knows!</p>
-
-<div class="gradient">
-  <p>Open props is so nice to work with!!</p>
-</div>
 
 <style>
   .variable-fonts {
+    width: 40vw;
     height: var(--size-15);
-    
+    padding: var(--size-3);
+    background-color: var(--border);
+
     & p {
+      font-size: var(--font-size-4);
       font-family: 'Decovar Alpha';
-      text-align: right;
       color: var(--color-2);
+      font-variation-settings: "BLDA" 100, "TRMD" 0, "TRMC" 0, "SKLD" 0, "TRML" 0, "SKLA" 0, "TRMF" 0, "TRMK" 0, "BLDB" 0, "WMX2" 0, "TRMB" 0, "TRMA" 0, "SKLB" 0, "TRMG" 0, "TRME" 0;
     }
-  }
 
-  p.upsiedownsies{
-    text-align: center;
-    transform: scale(1, -1);
-    text-transform: uppercase;
-    color: var(--color-1);
-  }
-
-  .gradient {
-    height: var(--size-15);
-    background: var(--gradient-10);
-
-    & p {
-      text-align: center;
+    & p:hover {
+      font-variation-settings: "BLDA" 0, "TRMD" 2000, "TRMC" 750, "SKLD" 0, "TRML" 250, "SKLA" 1000, "TRMF" 250, "TRMK" 250, "BLDB" 10, "WMX2" 750, "TRMB" 500, "TRMA" 500, "SKLB" 1000, "TRMG" 750, "TRME" 500;
     }
   }
 </style>

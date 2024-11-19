@@ -39,7 +39,14 @@
   repo = "https://github.com/itsValyria/Oncollaboration"
   status = {false}
   />
+
+  <p>
+    If you would like to see more you can visit my
+    <a href="https://github.com/zoepje" target="_blank">Github</a>.
+  </p>
 </div>
+
+
 
 <style>
   h1 {
@@ -57,4 +64,14 @@
     container-type: inline-size;
     max-width: 1250px;
   }
+
+  p {
+    width: 90%;
+  }
+
+  @container (min-width: 600px) {
+    p {
+      width: 40%;
+    }
+  } 
 </style>

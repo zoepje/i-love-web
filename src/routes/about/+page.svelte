@@ -8,6 +8,11 @@
 
 <h1>About</h1>
 
-<p>Dit is mijn ditigal garden, waarin ik mijn learning journal
-  bijhoud en ik code experimenten uitvoer.
+<p>
+  This is my ditigal garden, in which I experment with frontend code. I also take notes of my new findings and things I learned.
+</p>
+
+<p>
+  You can find me on 
+  <a href="https://github.com/zoepje" target="_blank">Github</a>
 </p>
