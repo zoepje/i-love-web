@@ -33,12 +33,11 @@
 
 <style>
   article {
-    width: 90vw;
-    margin-left: 1rem;
-    margin-bottom: 1.5rem;
+    width: 90%;
   }
 
   h2 {
+    padding-top: var(--size-3);
     font-size: var(--font-size-4);
   }
 
@@ -55,25 +54,19 @@
 
   div {
     display: flex;
-    gap: 1rem;
+    gap: var(--size-3);
   }
 
   a {
     display: flex;
     align-items: center;
-    gap: .3rem;
-    padding-bottom: 1rem;
+    gap: var(--size-1);
+    padding-bottom: var(--size-3);
   }
 
-  @container (min-width: 500px) {
+  @container (min-width: 600px) {
     article {
-      width: 40vw;
-    }
-  } 
-
-  @container (min-width: 800px) {
-    article {
-      width: 30vw;
+      width: 40%;
     }
   } 
 </style>

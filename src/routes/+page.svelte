@@ -45,12 +45,16 @@
   h1 {
     text-align: center;
     margin-inline: auto;
-    padding-bottom: 1rem;
+    padding-bottom: var(--size-3);
   }
 
   div {
+    margin-inline: auto;
     display: flex;
+    gap: var(--size-8);
     flex-wrap: wrap;
+    justify-content: space-around;
     container-type: inline-size;
+    max-width: 1250px;
   }
 </style>
