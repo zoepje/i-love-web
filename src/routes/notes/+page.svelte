@@ -9,6 +9,7 @@
 </svelte:head>
 
 <section>
+  <h1>Notes</h1>
   <ul class="posts">
     {#each data.posts as post }
       <li class="post">
@@ -21,6 +22,16 @@
 </section>
 
 <style>
+  h1 {
+    text-align: center;
+    max-inline-size: none;
+  }
+
+  section {
+    max-inline-size: var(--size-content-5);
+		margin-inline: auto;
+  }
+
   .posts {
     list-style: none;
     display: grid;
