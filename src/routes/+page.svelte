@@ -7,10 +7,50 @@
   <title>{config.title}</title>
 </svelte:head>
 
-<h1>Works</h1>
+<h1>My works</h1>
 
-<Card 
+<div>
+  <Card 
+  image = "merlin-book-of-potions.png"
   title = "Merlins book of potions"
+  description = "A game where you can create potions"
   site = "https://merlins-book-of-potions.onrender.com/"
   repo = "https://github.com/zoepje/proof-of-concept"/>
 
+  <Card 
+  image = "redpers.png"
+  title = "RedPers"
+  description = "An online news page for young aspiring journalists"
+  site = "https://pleasurable-ui-ktdn.onrender.com/"
+  repo = "https://github.com/Khdulkadir/pleasurable-ui"/>
+
+  <Card 
+  image = "lifely.png"
+  title = "Lifely - Getting started with AI"
+  description = "A static webpage about getting started with AI"
+  site = "https://zoepje.github.io/the-startup-responsive-interactieve-website/"
+  repo = "https://github.com/zoepje/the-startup-responsive-interactieve-website"/>
+
+  <Card 
+  image = "oncollaboration.png"
+  title = "Oncollaboration"
+  description = "A platform for radio oncologists to exchange knowledge"
+  site = "https://oncollaboration.vercel.app/"
+  repo = "https://github.com/itsValyria/Oncollaboration"
+  status = {false}
+  />
+</div>
+
+<style>
+  h1 {
+    text-align: center;
+    margin-inline: auto;
+    padding-bottom: 1rem;
+  }
+
+  div {
+    display: flex;
+    flex-wrap: wrap;
+    container-type: inline-size;
+  }
+</style>
