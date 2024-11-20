@@ -86,3 +86,20 @@ Je kunt je mappen indelen op verschillende manieren:
 - LEGO
 - Atomic design
 - Presenter-Container
+
+## 20 november 2024
+The new responsive: web design in a component-driven world. (Artiekel)[https://web.dev/articles/new-responsive?hl=ennsice]
+
+### Responsive to the user
+Instellingen van een gebruiker. Zoals bijvoorbeeld darkmode en motion. 
+De anatomie van een meadia query:
+- Aanroep van de media query
+- Media types
+- Media features
+- De conditie waaraan voldaan moet worden
+
+### Responsive to the container
+Gebruik container queries met Media queries voor een smooth flow.
+
+### Responsive to the form factor
+Je hebt nu ook vouwbare schermen hiermee kun je ook rekening houden door bijvoorbeeld `@media (spanning: <type of fold>)` te gebruiken
