@@ -102,4 +102,4 @@ De anatomie van een meadia query:
 Gebruik container queries met Media queries voor een smooth flow.
 
 ### Responsive to the form factor
-Je hebt nu ook vouwbare schermen hiermee kun je ook rekening houden door bijvoorbeeld `@media (spanning: <type of fold>)` te gebruiken
+Je hebt nu ook vouwbare schermen hiermee kun je ook rekening houden door bijvoorbeeld `@media (spanning: <type of fold>)` te gebruiken.
