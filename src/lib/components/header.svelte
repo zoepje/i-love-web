@@ -30,7 +30,7 @@
       <a href="/about"
          on:click="{() => current = 2}"
          class:active="{current === 2}">
-        About
+        About Me
       </a>
     </li>
   </ul>
