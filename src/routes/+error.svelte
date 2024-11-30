@@ -2,9 +2,10 @@
 	import { page } from '$app/stores'
 </script>
 
-<div class="error">
+<section class="error">
 	<h1>{$page.status}: {$page.error?.message}</h1>
-</div>
+	<a href="/">Back to home</a>
+</section>
 
 <style>
 	.error {
