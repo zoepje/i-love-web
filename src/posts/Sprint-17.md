@@ -17,4 +17,4 @@ Deze sprint gaan we werken aan creative coding. **Coding spike:** Maak leuke cod
 Je hebt cross-document dat bedekend dat tussen verschillende paginas een view transition toevoegd met vooral css. (:view-transition)
 Je hebt same-document dat betekend dat je in de pagina zelf met JavaScript een transition maakt. (startViewTransition)
 
-Spelen met JS en CSS: edu.nl/4cdr4
+Spelen met JS en CSS: [edu.nl/4cdr4](https://codepen.io/krijnhoetmer/pen/GgKqRJx)
