@@ -1,5 +1,5 @@
 ---
-title: Sprint 16
+title: Sprint 17
 description: User needs
 date: '2024-12-02'
 categories:
@@ -18,3 +18,7 @@ Je hebt cross-document dat bedekend dat tussen verschillende paginas een view tr
 Je hebt same-document dat betekend dat je in de pagina zelf met JavaScript een transition maakt. (startViewTransition)
 
 Spelen met JS en CSS: [edu.nl/4cdr4](https://codepen.io/krijnhoetmer/pen/GgKqRJx)
+
+
+## 11 december 2024
+### Kleuren in CSS
