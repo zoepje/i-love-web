@@ -20,10 +20,10 @@
       </a>
     </li>
     <li>
-      <a href="/experimenten"
+      <a href="/experiments"
          on:click="{() => current = 1}"
          class:active="{current === 1}">
-        Experimenten
+        Experiments
       </a>
     </li>
     <li>
