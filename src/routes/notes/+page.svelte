@@ -9,6 +9,7 @@
 </svelte:head>
 
 <section>
+  <h1>Notes</h1>
   <ul class="posts">
     {#each data.posts as post }
       <li class="post">
