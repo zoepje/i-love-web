@@ -1,6 +1,5 @@
 <script>
-// @ts-nocheck
-	import * as config from '$lib/config'
+	import * as config from '$lib/config';
   import { onMount } from 'svelte';
 
   // #region  ReuseMe 
@@ -130,7 +129,7 @@
 </svelte:head>
 
 <h1>Experiments</h1>
-<div class="experiments">
+<div class="experiments">   
   <div class="variable-fonts ex">
     <h2>Font animation</h2>
     <p class:animate="{animations['font']}">The five boxing wizards jump quicly.</p>
@@ -138,8 +137,8 @@
       <span class:hide="{animations['font']}">Animate me</span>
       <span class="stop" class:show="{animations['font']}">Stop</span>
     </button>
-  </div> 
-  
+  </div>
+
   <div class="container-interaction ex">
     <div class="guitar">
       <label><input id="sound" type="checkbox" value="sound" checked on:change={toggleSoundOnOff}>Sound</label>
@@ -265,6 +264,10 @@
 
     <audio bind:this={audioElement} src="/Electro_Funk.mp3"/>
   </div>
+
+  <div class="piano ex">
+    <h2>Piano</h2>
+  </div>
 </div>
 
 
@@ -283,7 +286,7 @@
   }
 
   .ex {
-    flex: 1 1 300px;
+    flex: 1 1;
     min-width: 300px;
     max-width: 600px;
     height: var(--size-15);
@@ -305,6 +308,12 @@
     position: absolute;
     bottom: 0;
     margin-bottom: 1rem;
+  }
+
+  @media only screen and (min-width: 600px) {
+    .ex {
+      min-width: 400px;
+    }
   }
   /* #region Variable-fonts */
   @keyframes fonts {
