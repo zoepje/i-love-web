@@ -60,6 +60,7 @@
   //#region Audio API
   let audioElement; 
   let playButton; 
+  let playing = false;
   let volumeControl; 
   let pannerControl; 
   let audioContext; // The AudioContext
@@ -105,10 +106,12 @@
       audioElement.play();
       playButton.dataset.playing = 'true';
       playButton.setAttribute('aria-checked', 'true');
+      playing = true;
     } else {
       audioElement.pause();
       playButton.dataset.playing = 'false';
       playButton.setAttribute('aria-checked', 'false');
+      playing = false;
     }
   }
 
@@ -256,10 +259,11 @@
 		</section>
 
     <button bind:this={playButton} class="play-button" data-playing="false" role="switch" aria-checked="false" on:click={togglePlay}>
-      <span>Play/Pause</span>
+      <span class:hide={playing}>Play</span>
+      <span class="stop" class:show={playing}>Pause</span>
     </button>
 
-    <audio bind:this={audioElement} src="/One_Ive_been_missing.mp3"/>
+    <audio bind:this={audioElement} src="/Electro_Funk.mp3"/>
   </div>
 </div>
 
