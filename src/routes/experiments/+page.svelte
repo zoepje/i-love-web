@@ -1,6 +1,7 @@
 <script>
 // @ts-nocheck
 	import * as config from '$lib/config'
+  import { onMount } from 'svelte';
 
   // #region  ReuseMe 
   let animations = {};
@@ -55,6 +56,70 @@
     }
   }
   // #endregion Guitar
+
+  //#region Audio API
+  let audioElement; 
+  let playButton; 
+  let volumeControl; 
+  let pannerControl; 
+  let audioContext; // The AudioContext
+  let track; // MediaElementSourceNode
+  let gainNode; // For volume control
+  let pannerNode; // For stereo panning
+
+  // Initialize the AudioContext and audio graph on user interaction
+  function initAudio() {
+    if (!audioContext) {
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      audioContext = new AudioContext();
+
+      // Create MediaElementSource and connect to the audio graph
+      track = audioContext.createMediaElementSource(audioElement);
+      gainNode = audioContext.createGain();
+      pannerNode = audioContext.createStereoPanner();
+
+      // Connect nodes: audio -> gain -> panner -> destination
+      track.connect(gainNode).connect(pannerNode).connect(audioContext.destination);
+
+      // Add listeners for volume and panner sliders
+      volumeControl.addEventListener('input', (e) => {
+        gainNode.gain.value = parseFloat(e.target.value);
+      });
+
+      pannerControl.addEventListener('input', (e) => {
+        pannerNode.pan.value = parseFloat(e.target.value);
+      });
+    }
+
+    // Resume the AudioContext (necessary for autoplay policy)
+    if (audioContext.state === 'suspended') {
+      audioContext.resume();
+    }
+  }
+
+  // Play/Pause functionality
+  function togglePlay() {
+    initAudio(); // Ensure AudioContext is initialized and resumed
+
+    if (playButton.dataset.playing === 'false') {
+      audioElement.play();
+      playButton.dataset.playing = 'true';
+      playButton.setAttribute('aria-checked', 'true');
+    } else {
+      audioElement.pause();
+      playButton.dataset.playing = 'false';
+      playButton.setAttribute('aria-checked', 'false');
+    }
+  }
+
+  onMount(() => {
+    // Reset button state when the audio ends
+    audioElement.addEventListener('ended', () => {
+      playButton.dataset.playing = 'false';
+      playButton.setAttribute('aria-checked', 'false');
+    });
+  });
+  //#endregion Audio API
 </script>
 
 <svelte:head>
@@ -171,6 +236,31 @@
       <h2>Strum and change my color</h2>
     </section>
   </div> 
+
+  <div class="audio-api ex">
+    <h2>Audio API</h2>
+    <section class="master-controls">
+			<input bind:this={volumeControl} type="range" id="volume" class="control-volume" min="0" max="2" value="1" list="gain-vals" step="0.01" data-action="volume" />
+			<datalist id="gain-vals">
+				<option value="0" label="min">
+				<option value="2" label="max">
+			</datalist>
+			<label for="volume">VOL</label>
+
+			<input bind:this={pannerControl} type="range" id="panner" class="control-panner" list="pan-vals" min="-1" max="1" value="0" step="0.01" data-action="panner" />
+			<datalist id="pan-vals">
+				<option value="-1" label="left">
+				<option value="1" label="right">
+			</datalist>
+			<label for="panner">PAN</label>
+		</section>
+
+    <button bind:this={playButton} class="play-button" data-playing="false" role="switch" aria-checked="false" on:click={togglePlay}>
+      <span>Play/Pause</span>
+    </button>
+
+    <audio bind:this={audioElement} src="/One_Ive_been_missing.mp3"/>
+  </div>
 </div>
 
 
@@ -212,7 +302,6 @@
     bottom: 0;
     margin-bottom: 1rem;
   }
-
   /* #region Variable-fonts */
   @keyframes fonts {
     5% {
@@ -324,4 +413,13 @@
     animation: colorChange 1s;
   }
   /* #endregion Guitar */
+
+  /* #region AudioAPI */
+  .audio-api {
+    position: relative;
+  }
+  /* #endregion AudioAPI */
 </style>
+
+
+
