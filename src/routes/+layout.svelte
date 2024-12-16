@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Header from '$lib/components/header.svelte'
+  import Navigation from '$lib/components/navigation.svelte'
   import Footer from '$lib/components/footer.svelte'
 	import PageTransition from '$lib/components/transition.svelte';
 
@@ -13,7 +13,7 @@
 </script>
 
 <div class="layout">
-  <Header />
+  <Navigation />
 
   <main>
     <PageTransition url={data.url}>

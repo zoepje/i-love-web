@@ -1,35 +1,30 @@
 <script lang="ts">
 	import Toggle from './toggle.svelte';
-
-  let current = 0;
+  import { page } from "$app/stores";
 </script>
 
 <nav>
   <a href="/" 
-     on:click="{() => current = 0}"
-     class="title" class:active="{current === 0}">
+     class="title" class:active={$page.url.pathname === '/'}>
     Home
   </a>
 
   <ul class="links">
     <li>
       <a href="/notes"
-         on:click="{() => current = 3}"
-         class:active="{current === 3}">
+         class:active={$page.url.pathname.startsWith('/notes')}>
         Notes
       </a>
     </li>
     <li>
       <a href="/experiments"
-         on:click="{() => current = 1}"
-         class:active="{current === 1}">
+         class:active={$page.url.pathname.startsWith('/experiments')}>
         Experiments
       </a>
     </li>
     <li>
       <a href="/about"
-         on:click="{() => current = 2}"
-         class:active="{current === 2}">
+         class:active={$page.url.pathname.startsWith('/about')}>
         About Me
       </a>
     </li>
