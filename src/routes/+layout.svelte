@@ -30,6 +30,8 @@
     max-inline-size: 1440px;
     margin-inline: auto;
     padding-inline: var(--size-7);
+    display: grid;
+    grid-template-rows: auto 1fr  auto;
   }
 
   main {
@@ -38,8 +40,6 @@
 
   @media (min-width: 1440px) {
 		.layout {
-      display: grid;
-      grid-template-rows: auto 1fr auto;
 			padding-inline: 0;
 		}
 	}
