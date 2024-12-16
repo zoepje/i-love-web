@@ -14,6 +14,7 @@
   // #endregion ReuseMe
 
   // #region Guitar
+  let an = false;
   let mySound;
   let sectionColor;
   let colorIndex = 0;
@@ -43,8 +44,14 @@
 
   function changeColor() {
     if (colors.length > 0) {
-      sectionColor.style.setProperty('--color', colors[colorIndex])
+      sectionColor.style.setProperty('--old-color', colors[colorIndex - 1])
+      sectionColor.style.setProperty('--new-color', colors[colorIndex])
       colorIndex = (colorIndex + 1) % colors.length;
+
+      an = false;
+      setTimeout(() => {
+        an = true;
+      }, 0);
     }
   }
   // #endregion Guitar
@@ -160,7 +167,7 @@
       <audio bind:this={mySound} src='/strum.wav' />  
     </div>
     
-    <section bind:this={sectionColor}>
+    <section bind:this={sectionColor} class:active={an} style="--old-color: red; --new-color: red;">
       <h2>Strum and change my color</h2>
     </section>
   </div> 
@@ -281,10 +288,8 @@
     }
 
     & section {
-      --color: red;
       height: 40%;
-      background-color: var(--color);
-      animation-duration: 1s;
+      background-color: var(--new-color);
       
       & h2 {
         color: black;
@@ -292,6 +297,31 @@
         margin-block: auto;
       }
     }
+  }
+
+  @property --new-color {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: red;
+  }
+
+  @property --old-color {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: red;
+  }
+
+  @keyframes colorChange {
+    from {
+      background-color: var(--old-color);
+    }
+    to {
+      background-color: var(--new-color);
+    }
+  }
+
+  .container-interaction section.active {
+    animation: colorChange 1s;
   }
   /* #endregion Guitar */
 </style>
