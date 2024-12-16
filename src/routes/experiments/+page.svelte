@@ -43,7 +43,7 @@
 
   function changeColor() {
     if (colors.length > 0) {
-      sectionColor.style.backgroundColor = colors[colorIndex];
+      sectionColor.style.setProperty('--color', colors[colorIndex])
       colorIndex = (colorIndex + 1) % colors.length;
     }
   }
@@ -281,8 +281,10 @@
     }
 
     & section {
+      --color: red;
       height: 40%;
-      background-color: red;
+      background-color: var(--color);
+      animation-duration: 1s;
       
       & h2 {
         color: black;
