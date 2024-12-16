@@ -182,8 +182,9 @@
   }
 
   .ex {
+    flex: 1 1 300px;
     min-width: 300px;
-    width: 30%;
+    max-width: 600px;
     height: var(--size-15);
     padding: var(--size-4);
     background-color: var(--border);
