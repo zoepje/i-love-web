@@ -140,6 +140,11 @@ html {
 	background-attachment: fixed;
 }
 
+h1 {
+	font-size: var(--font-size-7);
+	margin-bottom: 1.5rem;
+}
+
 img {
 	border-radius: var(--radius-3);
 }
@@ -271,5 +276,9 @@ li::marker {
 @media only screen and (min-width: 600px){
 	body {
 		margin: var(--size-5);
+	}
+
+	h1 {
+		font-size: var(--font-size-8);
 	}
 }
