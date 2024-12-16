@@ -8,7 +8,6 @@
   function toggleAnimation(key) {
     animations = { 
       ...animations, 
-      // @ts-ignore
       [key]: !animations[key] 
     };
   }
