@@ -1,7 +1,5 @@
 <script lang="ts">
-  import Navigation from '$lib/components/navigation.svelte'
-  import Footer from '$lib/components/footer.svelte'
-	import PageTransition from '$lib/components/transition.svelte';
+  import { Footer, Navigation, PageTransition } from "$lib/index";
 
   import 'open-props/style'
   import 'open-props/normalize'

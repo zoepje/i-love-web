@@ -1,6 +1,6 @@
 <script lang="ts">
   import * as config from '$lib/config'
-  import Card from '$lib/components/card.svelte';
+  import { Card } from '$lib/index';
 </script>
 
 <svelte:head>

@@ -1,6 +1,5 @@
 <script>
-  import ExternalLink from "./external-link.svelte";
-  import GithubMarkWhite from "./github-mark-white.svelte";
+  import { ExternalLink, GithubMarkWhite } from "$lib/index";
   export let image = 'error.png';
   export let title = '';
   export let description = '';
