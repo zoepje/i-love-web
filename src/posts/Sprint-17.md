@@ -19,7 +19,6 @@ Je hebt same-document dat betekend dat je in de pagina zelf met JavaScript een t
 
 Spelen met JS en CSS: [edu.nl/4cdr4](https://codepen.io/krijnhoetmer/pen/GgKqRJx)
 
-
 ## 11 december 2024
 ### Kleuren in CSS
 Naast hex en rgb zijn er verschillende manieren waarmee je kleuren kunt aangeven in css. Het gebruiken van kommas in rgb is niet meer nodig. Je kunt ook hsl(hue saturation lightness) gebruiken. De hue kun je aangeven in degs en turns. [CSS: custom properties guide](https://css-tricks.com/a-complete-guide-to-custom-properties/).
