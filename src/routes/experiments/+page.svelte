@@ -120,13 +120,14 @@
     audioElement.addEventListener('ended', () => {
       playButton.dataset.playing = 'false';
       playButton.setAttribute('aria-checked', 'false');
+      playing = false;
     });
   });
   // #endregion Audio API
 
   // #region Piano
   let keyboard;
-  let wabePicker;
+  let wavePicker;
 
   let noteFreq = createNoteTable(); // Get the frequency table
   let activeNotes = new Map();
@@ -141,7 +142,8 @@
 
     if (key && octave && !activeNotes.has(key)) {
       const freq = noteFreq[octave][key];
-      const oscData = playNote(freq);
+      const waveform = wavePicker?.value || "sine";
+      const oscData = playNote(freq, waveform);
 
       // Store the oscillator data so it can be stopped later
       activeNotes.set(key, oscData);
@@ -304,6 +306,7 @@
   <div class="piano ex">
     <h2>Keyboard</h2>
     <div class="container-keyboard">
+      
       <!-- svelte-ignore a11y-no-static-element-interactions -->
       <div class="keyboard" bind:this={keyboard}   
         on:mousedown={startNoteHandler}
@@ -356,7 +359,7 @@
 
     <div class="waveform">
       <span>Current waveform: </span>
-      <select name="waveform" bind:this={wabePicker}>
+      <select name="waveform" bind:this={wavePicker}>
         <option value="sine" selected>Sine</option>
         <option value="square">Square</option>
         <option value="sawtooth">Sawtooth</option>
@@ -384,7 +387,7 @@
 
   .ex {
     flex: 1 1;
-    min-width: 300px;
+    min-width: 250px;
     max-width: 600px;
     height: var(--size-15);
     padding: var(--size-4);
@@ -591,19 +594,35 @@
     border-radius: var(--radius-3);
   }
 
-  .master-controls {
-    display: grid;
-    grid-template-rows: repeat(2, auto);
-    grid-template-columns: repeat(2, auto);
-    grid-template-areas:
-        "volin panin"
-        "vollab panlab";
-    justify-items: center;
-    align-items: center;
-  }
+  @media only screen and (min-width: 600px) {
+    .master-controls {
+      display: grid;
+      grid-template-rows: repeat(2, auto);
+      grid-template-columns: repeat(2, auto);
+      grid-template-areas:
+          "volin panin"
+          "vollab panlab";
+      justify-items: center;
+      align-items: center;
+    }
 
-  .control-volume {
-    grid-area: volin;
+    .control-volume {
+      grid-area: volin;
+    }
+
+    label[for="volume"] {
+      grid-area: vollab;
+      margin-top: 15px;
+    }
+
+    .control-panner {
+      grid-area: panin;
+    }
+
+    label[for="panner"] {
+      grid-area: panlab;
+      margin-top: 15px;
+    }
   }
 
   .control-volume::before {
@@ -614,15 +633,6 @@
     content: 'max';
   }
 
-  label[for="volume"] {
-    grid-area: vollab;
-    margin-top: 15px;
-  }
-
-  .control-panner {
-    grid-area: panin;
-  }
-
   .control-panner::before {
     content: 'left';
   }
@@ -631,19 +641,15 @@
     content: 'right';
   }
 
-  label[for="panner"] {
-    grid-area: panlab;
-    margin-top: 15px;
-  }
   /* #endregion AudioAPI */
 
   /* #region Keyboard */
   .container-keyboard {
+    max-width: calc(100vw - 7rem);
     overflow-x: scroll;
     overflow-y: hidden;
-    height: 110px;
     white-space: nowrap;
-    margin: 10px;
+    margin-block: 10px;
   }
 
   .keyboard {
