@@ -431,6 +431,113 @@
   .audio-api {
     position: relative;
   }
+
+  input[type=range] {
+    -webkit-appearance: none;
+    background: transparent;
+    width: 150px;
+  }
+
+  input[type=range]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    margin-top: -1vh;
+    height: 4vh; width: 2vw;
+    border: 0.5vmin solid var(--surface-2);
+    border-radius: var(--radius-3);
+    background-color: var(--color-1);
+    cursor: pointer;
+  }
+
+  input[type=range]::-moz-range-thumb {
+    height: 4vh; width: 2vw;
+    border: 0.5vmin solid var(--surface-2);
+    border-radius: var(--radius-3);
+    background-color: var(--color-1);
+    cursor: pointer;
+  }
+
+  input[type=range]::-ms-thumb {
+    height: 4vh; width: 2vw;
+    border: 0.5vmin solid var(--surface-2);
+    border-radius: var(--radius-3);
+    background-color: var(--color-1);
+    cursor: pointer;
+  }
+
+  input[type=range]::-webkit-slider-runnable-track {
+    height: 2vh;
+    cursor: pointer;
+    background-color: var(--surface-2);
+    border-radius: var(--radius-3);
+  }
+
+  input[type=range]::-moz-range-track {
+    height: 2vh;
+    cursor: pointer;
+    background-color: var(--surface-2);
+    border-radius: var(--radius-3);
+  }
+
+  input[type=range]::-ms-track {
+    height: 2vh;
+    cursor: pointer;
+    background-color: var(--surface-2);
+    border-radius: var(--radius-3);
+  }
+
+  .master-controls {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(2, auto);
+    grid-template-areas:
+        "volin panin"
+        "vollab panlab";
+    justify-items: center;
+    align-items: center;
+  }
+
+  .control-volume {
+    grid-area: volin;
+  }
+
+  .control-volume::before {
+    content: 'min';
+  }
+
+  .control-volume::after {
+    content: 'max';
+  }
+
+  label[for="volume"] {
+    grid-area: vollab;
+    margin-top: 15px;
+  }
+
+  .control-panner {
+    grid-area: panin;
+  }
+
+  .control-panner::before {
+    content: 'left';
+  }
+
+  .control-panner::after {
+    content: 'right';
+  }
+
+  label[for="panner"] {
+    grid-area: panlab;
+    margin-top: 15px;
+  }
+
   /* #endregion AudioAPI */
 </style>
 
