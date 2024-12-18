@@ -364,7 +364,7 @@
         <option value="square">Square</option>
         <option value="sawtooth">Sawtooth</option>
         <option value="triangle">Triangle</option>
-        <option value="custom">Custom</option>
+        <!-- <option value="custom">Custom</option> -->
       </select>
     </div>
   </div>
