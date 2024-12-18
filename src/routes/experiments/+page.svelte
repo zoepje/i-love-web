@@ -1,5 +1,6 @@
 <script>
 	import * as config from '$lib/config';
+  import { createNoteTable, stopNote, playNote, initPiano } from "$lib/piano-functions";
   import { onMount } from 'svelte';
 
   // #region  ReuseMe 
@@ -56,7 +57,7 @@
   }
   // #endregion Guitar
 
-  //#region Audio API
+  // #region Audio API
   let audioElement; 
   let playButton; 
   let playing = false;
@@ -121,7 +122,42 @@
       playButton.setAttribute('aria-checked', 'false');
     });
   });
-  //#endregion Audio API
+  // #endregion Audio API
+
+  // #region Piano
+  let keyboard;
+  let wabePicker;
+
+  let noteFreq = createNoteTable(); // Get the frequency table
+  let activeNotes = new Map();
+
+  onMount(() => {
+    initPiano(); // Initialize AudioContext
+  });
+
+  function startNoteHandler(event) {
+    const key = event.target.getAttribute("data-note");
+    const octave = event.target.getAttribute("data-octave");
+
+    if (key && octave && !activeNotes.has(key)) {
+      const freq = noteFreq[octave][key];
+      const oscData = playNote(freq);
+
+      // Store the oscillator data so it can be stopped later
+      activeNotes.set(key, oscData);
+    }
+  }
+
+  function stopNoteHandler(event) {
+    const key = event.target.getAttribute("data-note");
+    if (key && activeNotes.has(key)) {
+      const oscData = activeNotes.get(key);
+      stopNote(oscData);
+
+      activeNotes.delete(key); // Remove the note from activeNotes
+    }
+  }
+  // #endregion Piano
 </script>
 
 <svelte:head>
@@ -266,7 +302,68 @@
   </div>
 
   <div class="piano ex">
-    <h2>Piano</h2>
+    <h2>Keyboard</h2>
+    <div class="container-keyboard">
+      <!-- svelte-ignore a11y-no-static-element-interactions -->
+      <div class="keyboard" bind:this={keyboard}   
+        on:mousedown={startNoteHandler}
+        on:mouseup={stopNoteHandler}
+        on:mouseleave={stopNoteHandler}
+        on:touchstart={startNoteHandler}
+        on:touchend={stopNoteHandler} >
+        <div class="white-key key c" data-note="C" data-octave="3"></div>
+        <div class="black-key key cs" data-note="C#" data-octave="3"></div>
+        <div class="white-key key d" data-note="D" data-octave="3"></div>
+        <div class="black-key key ds" data-note="D#" data-octave="3"></div>
+        <div class="white-key key e" data-note="E" data-octave="3"></div>
+        <div class="white-key key f" data-note="F" data-octave="3"></div>
+        <div class="black-key key fs" data-note="F#" data-octave="3"></div>
+        <div class="white-key key g" data-note="G" data-octave="3"></div>
+        <div class="black-key key gs" data-note="G#" data-octave="3"></div>
+        <div class="white-key key a" data-note="A" data-octave="3"></div>
+        <div class="black-key key as" data-note="A#" data-octave="3"></div>
+        <div class="white-key key b" data-note="B" data-octave="3"></div>
+
+        <div class="white-key key c" data-note="C" data-octave="4"></div>
+        <div class="black-key key cs" data-note="C#" data-octave="4"></div>
+        <div class="white-key key d" data-note="D" data-octave="4"></div>
+        <div class="black-key key ds" data-note="D#" data-octave="4"></div>
+        <div class="white-key key e" data-note="E" data-octave="4"></div>
+        <div class="white-key key f" data-note="F" data-octave="4"></div>
+        <div class="black-key key fs" data-note="F#" data-octave="4"></div>
+        <div class="white-key key g" data-note="G" data-octave="4"></div>
+        <div class="black-key key gs" data-note="G#" data-octave="4"></div>
+        <div class="white-key key a" data-note="A" data-octave="4"></div>
+        <div class="black-key key as" data-note="A#" data-octave="4"></div>
+        <div class="white-key key b" data-note="B" data-octave="4"></div>
+
+        <div class="white-key key c" data-note="C" data-octave="5"></div>
+        <div class="black-key key cs" data-note="C#" data-octave="5"></div>
+        <div class="white-key key d" data-note="D" data-octave="5"></div>
+        <div class="black-key key ds" data-note="D#" data-octave="5"></div>
+        <div class="white-key key e" data-note="E" data-octave="5"></div>
+        <div class="white-key key f" data-note="F" data-octave="5"></div>
+        <div class="black-key key fs" data-note="F#" data-octave="5"></div>
+        <div class="white-key key g" data-note="G" data-octave="5"></div>
+        <div class="black-key key gs" data-note="G#" data-octave="5"></div>
+        <div class="white-key key a" data-note="A" data-octave="5"></div>
+        <div class="black-key key as" data-note="A#" data-octave="5"></div>
+        <div class="white-key key b" data-note="B" data-octave="5"></div>
+
+        <div class="white-key key c" data-note="C" data-octave="6"></div>
+      </div>
+    </div>
+
+    <div class="waveform">
+      <span>Current waveform: </span>
+      <select name="waveform" bind:this={wabePicker}>
+        <option value="sine" selected>Sine</option>
+        <option value="square">Square</option>
+        <option value="sawtooth">Sawtooth</option>
+        <option value="triangle">Triangle</option>
+        <option value="custom">Custom</option>
+      </select>
+    </div>
   </div>
 </div>
 
@@ -315,6 +412,7 @@
       min-width: 400px;
     }
   }
+
   /* #region Variable-fonts */
   @keyframes fonts {
     5% {
@@ -537,8 +635,78 @@
     grid-area: panlab;
     margin-top: 15px;
   }
-
   /* #endregion AudioAPI */
+
+  /* #region Keyboard */
+  .container-keyboard {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: 110px;
+    white-space: nowrap;
+    margin: 10px;
+  }
+
+  .keyboard {
+    width: auto;
+    padding: 0;
+    margin: 0;
+  }
+
+  .key {
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: inline-block;
+    position: relative;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }
+
+  .white-key {
+    width: 20px;
+    height: 80px;
+    box-shadow: 0 2px darkgray;
+    background-color: var(--surface-2-light);
+    z-index: 1;
+  }
+
+  .black-key {
+    width: 10px;
+    height: 40px;
+    box-shadow: 0 2px rgb(49, 49, 49);
+    background-color: var(--surface-2-dark);
+    top: -38px;
+    z-index: 2;
+  }
+
+  .key:hover {
+    background-color: var(--color-1);
+  }
+
+  .key:active,
+  .active {
+    background-color: var(--color-2);
+  }
+
+  .c:first-of-type {
+    margin: 0 -9px 0 0;
+  }
+
+  .e, .b {
+    margin: 0 0 0 -9px;
+  }
+
+  .d,.g,.a {
+    margin: 0 -9px 0 -9px;
+  }
+
+  .c, .f {
+    margin: 0 -9px 0 -4px;
+  }
+
+  /* #endregion Keyboard */
 </style>
 
 
