@@ -1,6 +1,7 @@
 <script>
 	import * as config from '$lib/config';
-  import { createNoteTable, stopNote, playNote, initPiano } from "$lib/piano-functions";
+  import { createNoteTable, stopNote, playNote, initPiano, playSong, stopAllNotes } from "$lib/piano-functions";
+  import { songs } from '$lib/songs.js';
   import { onMount } from 'svelte';
 
   // #region  ReuseMe 
@@ -128,6 +129,7 @@
   // #region Piano
   let keyboard;
   let wavePicker;
+  let songPicker;
 
   let noteFreq = createNoteTable(); // Get the frequency table
   let activeNotes = new Map();
@@ -147,16 +149,32 @@
 
       // Store the oscillator data so it can be stopped later
       activeNotes.set(key, oscData);
+
+      event.target.classList.add("active");
     }
   }
 
   function stopNoteHandler(event) {
     const key = event.target.getAttribute("data-note");
+    const octave = event.target.getAttribute("data-octave");
+
     if (key && activeNotes.has(key)) {
       const oscData = activeNotes.get(key);
       stopNote(oscData);
-
       activeNotes.delete(key); // Remove the note from activeNotes
+
+      event.target.classList.remove("active");
+    }
+  }
+
+  function handleSongChange() {
+    stopAllNotes(); 
+
+    const selectedSongKey = songPicker.value; // Get the selected song key
+    const waveform = wavePicker?.value || "sine"; // Get waveform or default to "sine"
+
+    if (selectedSongKey && songs[selectedSongKey]) {
+      playSong(songs[selectedSongKey], noteFreq, waveform);
     }
   }
   // #endregion Piano
@@ -305,6 +323,7 @@
 
   <div class="piano ex">
     <h2>Keyboard</h2>
+    <p> Play a fun song! To sustain a note, click and hold a key, then move your mouse off the keyboard before releasing the click. The note will keep playing until you stop it by clicking on the key again.</p>
     <div class="container-keyboard">
       
       <!-- svelte-ignore a11y-no-static-element-interactions -->
@@ -366,6 +385,16 @@
         <option value="triangle">Triangle</option>
         <!-- <option value="custom">Custom</option> -->
       </select>
+    </div>
+
+    <div class="songs">
+      <span>Play song:</span>
+      <select name="song" bind:this={songPicker} on:change={handleSongChange}>
+        <option value="" selected> select a song </option>
+        <option value="marry">Marry had a little lamb</option>
+        <option value="jacques">Frere Jacques</option>
+        <option value="twinkle">Twinkle twinkle little star</option>
+      </select> 
     </div>
   </div>
 </div>
@@ -694,6 +723,7 @@
   .key:active,
   .active {
     background-color: var(--color-2);
+    box-shadow: unset;
   }
 
   .c:first-of-type {
@@ -712,6 +742,9 @@
     margin: 0 -9px 0 -4px;
   }
 
+  .songs {
+    padding-top: 1rem;
+  }
   /* #endregion Keyboard */
 </style>
 

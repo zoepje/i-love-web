@@ -1,6 +1,8 @@
 let audioCtx;
 let oscList = [];
 let gainPiano;
+let activeTimeouts = [];
+let activeOscillators = [];
 
 // Initialize AudioContext
 export function initPiano() {
@@ -92,4 +94,74 @@ export function createNoteTable() {
 
   noteFreq[6]["C"] = 1046.502;
   return noteFreq;
+}
+
+export function playSong(song, noteFreq, waveform = "sine") {
+  stopAllNotes();
+
+  activeTimeouts.forEach(clearTimeout);
+  activeTimeouts = [];
+
+  const notes = song.split(" ");
+  
+  // Parse notes into frequency and duration pairs
+  const parsedNotes = notes.map((note) => {
+    if (note === "rest") {
+      return { freq: null, duration: 400, key: null }; // A rest has no frequency, only duration
+    }
+    const [key, octave] = [note.slice(0, -1), note.slice(-1)];
+    return {
+      freq: noteFreq[octave][key],
+      duration: 400, // Set a fixed duration for simplicity
+      key: `${key}${octave}`,
+    };
+  });
+
+  let i = 0;
+
+  function playNextNote() {
+    if (i < parsedNotes.length) {
+      const { freq, duration, key } = parsedNotes[i++];
+      if (freq) {
+        // Play the note if it's not a rest
+        const oscData = playNote(freq, waveform);
+
+        // Track active oscillator for stopping
+        activeOscillators.push(oscData);
+
+        // Highlight the key
+        const keyElement = document.querySelector(`[data-note="${key.slice(0, -1)}"][data-octave="${key.slice(-1)}"]`);
+        if (keyElement) keyElement.classList.add("active");
+
+        const timeoutId = setTimeout(() => {
+          // Stop the note and remove the highlight after its duration
+          stopNote(oscData);
+          activeOscillators = activeOscillators.filter((o) => o !== oscData);
+          if (keyElement) keyElement.classList.remove("active");
+
+          playNextNote(); // Schedule the next note
+        }, duration);
+        activeTimeouts.push(timeoutId);
+      } else {
+        // Handle a rest: just delay without playing a note
+        const timeoutId = setTimeout(() => {
+          playNextNote(); // Move to the next note after the rest
+        }, duration);
+        activeTimeouts.push(timeoutId);
+      }
+    }
+  }
+
+  playNextNote();
+}
+
+export function stopAllNotes() {
+  activeTimeouts.forEach(clearTimeout);
+  activeTimeouts = [];
+
+  activeOscillators.forEach(stopNote);
+  activeOscillators = []
+
+  const activeKeys = document.querySelectorAll(".active");
+  activeKeys.forEach((key) => key.classList.remove("active"));
 }
