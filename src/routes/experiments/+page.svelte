@@ -394,6 +394,7 @@
         <option value="marry">Marry had a little lamb</option>
         <option value="jacques">Frere Jacques</option>
         <option value="twinkle">Twinkle twinkle little star</option>
+        <option value="birthday">Happy birthday</option>
       </select> 
     </div>
   </div>
