@@ -674,6 +674,16 @@
   /* #endregion AudioAPI */
 
   /* #region Keyboard */
+  .piano p {
+    display: none;
+  }
+
+  @media (hover: hover){
+    .piano p {
+      display: block;
+    }
+  }
+
   .container-keyboard {
     max-width: calc(100vw - 7rem);
     overflow-x: scroll;
