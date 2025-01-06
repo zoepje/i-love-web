@@ -1,3 +1,12 @@
+---
+title: Sprint 18
+description: Release Candidate
+date: '2025-01-06'
+categories:
+  - sprint
+published: True
+---
+
 ## De software release life cycle (SRLC)
 1. Pre-alpha (ontwikkelen)
 1. Alpha-testen (intern testing)
