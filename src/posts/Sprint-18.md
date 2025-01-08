@@ -12,3 +12,7 @@ published: True
 1. Alpha-testen (intern testing)
 1. Beta-testen (outside testing)
 1. Release candidate (betaversie met de potentie een stabiel product te worden)
+
+
+## 8 januarie 2025
+### Tijdlijn animatie en scenes met GSAP
