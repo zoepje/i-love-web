@@ -6,8 +6,10 @@ categories:
   - sprint
 published: True
 ---
+## Table of Contents
 
-## De software release life cycle (SRLC)
+## 6 januarie 2025
+### De software release life cycle (SRLC)
 1. Pre-alpha (ontwikkelen)
 1. Alpha-testen (intern testing)
 1. Beta-testen (outside testing)
@@ -16,3 +18,4 @@ published: True
 
 ## 8 januarie 2025
 ### Tijdlijn animatie en scenes met GSAP
+Ga even spelen met GSAP op [codepen](https://codepen.io/zoepje/pen/yyBvYGm?editors=0010).
