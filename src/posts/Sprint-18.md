@@ -39,3 +39,15 @@ Tips voor clean code:
 - Maak code leesbaar (voor mensen)
 
 ### Refactoring
+Refactoring is een proces van het verbeteren van de structuur van de code zonder het gedrag te veranderen.
+
+Tips voor refactoring:
+- Patroon: Hernoem functie declaratie
+    - De handtekening van een functie omvat de naam, parameters, en soms het returntype
+- Patroon: Splits conditionals op
+    - Complexe
+- Patroon: vervang loops door piplines
+    - Traditionele iteraties over collecties worden vervangen door een functionele stijl met behulp van een pipeline van operaties.
+- Patroon: verwijder dode code
+- Patroon: verschuif statements
+    - Herpositioneren van code binnen een methode om de leesbaarheid en logische volgorde te verbeteren. 
