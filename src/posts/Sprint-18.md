@@ -55,7 +55,7 @@ Tips voor refactoring:
 ### Sveltekit best practices
 Tips:
 - Voorkom het inladen van componenten, die componenten inladen, die componenten inladen
-- Als een bestand te groot wordt zet je <script> en <style> elementen in een apart bestand en importeer die!
+- Als een bestand te groot wordt zet je `<script>` en `<style>` elementen in een apart bestand en importeer die!
 - Pre-rendering kun je per route aanzetten
 - Performance test in `build`
 - @sveltejs/enhanced-img voor responsive images locaal.
