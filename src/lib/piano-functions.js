@@ -3,7 +3,7 @@ let oscList = [];
 let gainPiano;
 let activeTimeouts = [];
 let activeOscillators = [];
-
+import { songs } from "$lib/songs";
 // Initialize AudioContext
 export function initPiano() {
   audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -96,13 +96,14 @@ export function createNoteTable() {
   return noteFreq;
 }
 
-export function playSong(song, noteFreq, waveform = "sine") {
+export function playSong(selectedSongKey, noteFreq, waveform = "sine") {
   stopAllNotes();
 
   activeTimeouts.forEach(clearTimeout);
   activeTimeouts = [];
 
-  const notes = song.split(" ");
+  const selectedSong = songs.find(song => song.value === selectedSongKey);
+  const notes = selectedSong.song.split(" ");
   
   // Parse notes into frequency and duration pairs
   const parsedNotes = notes.map((note) => {

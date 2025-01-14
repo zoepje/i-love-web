@@ -173,8 +173,8 @@
     const selectedSongKey = songPicker.value; // Get the selected song key
     const waveform = wavePicker?.value || "sine"; // Get waveform or default to "sine"
 
-    if (selectedSongKey && songs[selectedSongKey]) {
-      playSong(songs[selectedSongKey], noteFreq, waveform);
+    if (selectedSongKey) {
+      playSong(selectedSongKey, noteFreq, waveform);
     }
   }
   // #endregion Piano
@@ -391,10 +391,9 @@
       <span>Play song:</span>
       <select name="song" bind:this={songPicker} on:change={handleSongChange}>
         <option value="" selected> select a song </option>
-        <option value="marry">Marry had a little lamb</option>
-        <option value="jacques">Frere Jacques</option>
-        <option value="twinkle">Twinkle twinkle little star</option>
-        <option value="birthday">Happy birthday</option>
+        {#each songs as song}
+          <option value="{song.value}">{song.title}</option>
+        {/each}
       </select> 
     </div>
   </div>
