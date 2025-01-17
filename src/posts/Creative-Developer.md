@@ -7,6 +7,7 @@ categories:
 published: True
 ---
 
+## Table of Contents
 [Nicolas Garnier](https://nico.computer/)
 
 ### What is a creative developer?
