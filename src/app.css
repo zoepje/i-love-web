@@ -12,7 +12,7 @@ html {
 	--font-mono: 'JetBrains Mono', monospace;
 
 	/* dark */
-	--brand-dark: var(--orange-3);
+	--brand-dark: var(--teal-4);
 	--text-1-dark: var(--gray-3);
 	--text-2-dark: var(--gray-5);
 	--text-alt-dark: var(--gray-11);
@@ -28,7 +28,7 @@ html {
 	--border-dark: var(--gray-9);
 
 	/* light */
-	--brand-light: var(--orange-10);
+	--brand-light: var(--teal-7);
 	--text-1-light: var(--gray-8);
 	--text-2-light: var(--gray-7);
 	--text-alt-light: var(--gray-1);
@@ -183,6 +183,9 @@ li::marker {
 }
 
 /* ... */
+.prose {
+	max-width: calc(100vw - 2*var(--size-7));
+}
 
 .prose :is(h2, h3, h4, h5, h6) {
 	margin-top: var(--size-6);
