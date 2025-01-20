@@ -14,3 +14,15 @@
   You can find me on 
   <a href="https://github.com/zoepje" target="_blank">Github</a>
 </p>
+
+<style>
+  h1 {
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  p {
+    max-inline-size: var(--size-content-3);
+    margin-inline: auto;
+  }
+</style>

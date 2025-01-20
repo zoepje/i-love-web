@@ -8,33 +8,33 @@
   <title>{config.title} - Notes</title>
 </svelte:head>
 
-<section>
-  <h1>Notes</h1>
-  <ul class="posts">
-    {#each data.posts as post }
-      <li class="post">
-        <a href="notes/{post.slug}" class="title">{post.title}</a>
-        <p class="date">{formatDate(post.date)}</p>
-        <p class="description">{post.description}</p>
-      </li>
-    {/each}
-  </ul>
-</section>
+<h1>Notes</h1>
+<ul class="posts">
+  {#each data.posts as post }
+    <li class="post">
+      <a href="notes/{post.slug}" class="title">{post.title}</a>
+      <p class="date">{formatDate(post.date)}</p>
+      <p class="description">{post.description}</p>
+    </li>
+  {/each}
+</ul>
 
 <style>
-  section {
-    max-inline-size: var(--size-content-3);
-		margin-inline: auto;
+  h1 {
+    margin-inline: auto;
+    text-align: center;
   }
 
   .posts {
     list-style: none;
     display: grid;
     gap: var(--size-7);
+    max-inline-size: var(--size-content-3);
+    margin-inline: auto;
   }
 
   .post {
-		max-inline-size: var(--size-content-3);
+		max-inline-size: var(--size-content-4);
 	}
 
 	.post:not(:last-child) {
