@@ -9,9 +9,11 @@
 </script>
 
 <article>
-  <img src="/images/{image}" alt="webite thumbnail" width="450" height="280">
-  <h2>{title}</h2>
-  <p>{description}</p>
+  <a href="{site}" target="_blank" class="card-link">
+    <img src="/images/{image}" alt="webite thumbnail" width="450" height="280">
+    <h2>{title}</h2>
+    <p>{description}</p>
+  </a>
   <div>
     <a href="{site}" target="_blank" class="website">
       <ExternalLink />
@@ -35,6 +37,19 @@
     width: 90%;
   }
 
+  .card-link {
+    display: grid;
+    color: var(--text);
+  }
+
+  .card-link:hover {
+    scale: 1.01;
+  }
+
+  .card-link::before {
+    width: 0;
+  }
+
   h2 {
     padding-top: var(--size-3);
     font-size: var(--font-size-4);
@@ -54,13 +69,13 @@
   div {
     display: flex;
     gap: var(--size-3);
+    padding-bottom: var(--size-3);
   }
 
   a {
     display: flex;
     align-items: center;
     gap: var(--size-1);
-    padding-bottom: var(--size-3);
   }
 
   @container (min-width: 600px) {
