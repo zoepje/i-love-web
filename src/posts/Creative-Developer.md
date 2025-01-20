@@ -8,6 +8,8 @@ published: True
 ---
 
 ## Table of Contents
+
+## We Love Web
 [Nicolas Garnier](https://nico.computer/)
 
 ### What is a creative developer?

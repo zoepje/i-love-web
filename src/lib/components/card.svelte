@@ -40,6 +40,7 @@
   .card-link {
     display: grid;
     color: var(--text);
+    width: fit-content;
   }
 
   .card-link:hover {

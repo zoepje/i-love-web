@@ -42,6 +42,8 @@ html {
 	--surface-4-light: var(--gray-3);
 	--background-light: none;
 	--border-light: var(--gray-4);
+
+	--link-visited: var(--color-1);
 }
 
 :root {
@@ -223,7 +225,7 @@ a:hover::before {
 .prose :is(h2) {
 	margin-bottom: var(--size-1);
 	font-size: var(--font-size-3);
-	color: var(--color-1);
+	color: var(--color-2);
 }
 
 .prose p:not(:is(h2, h3, h4, h5, h6) + p) {

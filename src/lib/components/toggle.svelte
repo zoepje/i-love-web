@@ -26,10 +26,15 @@
 		border: none;
 		box-shadow: none;
 		overflow: hidden;
+    transition: .3s ease-in-out;
   }
 
   button > * {
 		display: flex;
 		gap: var(--size-2);
 	}
+
+  button:hover {
+    color: var(--color-1);
+  }
 </style>
