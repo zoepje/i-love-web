@@ -8,7 +8,7 @@ published: True
 ---
 ## Table of Contents
 
-## 6 januarie 2025
+## 6 januari 2025
 ### De software release life cycle (SRLC)
 1. Pre-alpha (ontwikkelen)
 1. Alpha-testen (intern testing)
@@ -16,12 +16,12 @@ published: True
 1. Release candidate (betaversie met de potentie een stabiel product te worden)
 
 
-## 8 januarie 2025
+## 8 januari 2025
 ### Tijdlijn animatie en scenes met GSAP
 Ga even spelen met GSAP op [codepen](https://codepen.io/zoepje/pen/yyBvYGm?editors=0010).
 Maak scene 3 op een [fork](https://github.dev/joostf/GSAP-timelines/) van deze site.
 
-## 13 januarie 2025
+## 13 januari 2025
 ### Clean code
 > Even bad code can function. But if code isn't clean, it can bring a development organization to its knees.
 > - Robert C. Martin
@@ -60,3 +60,34 @@ Tips:
 - Performance test in `build`
 - @sveltejs/enhanced-img voor responsive images locaal.
 - Maken van sitemaps voor search optimalisation.
+
+## 20 januari 2025
+ThreeJS - WebGL - Shaders
+
+### Three.js
+1. Scene - de wereld waarin de 3d objecten zich bevinden
+1. Camera - de camera waarmee je naar de 3d objecten kijkt
+1. Renderer - 
+
+Je Three.js 
+1. Mesh -
+1. Light -
+1. Shader - 
+
+#### Basis
+- Scene
+- Perspective camera
+- Orthographic camera
+- WebGLRenderer
+    - setSize
+    - render
+- BoxGeometry
+- MeshBasicMaterial
+    - 0xFFFFFF
+- 
+
+### Tutorials
+- [Three.js journey](https://threejs-journey.com/)
+- [Codrops](https://tympanus.net/codrops/)
+- [The book of shaders](https://thebookofshaders.com/)
+- [The coding train](https://thecodingtrain.com/)
