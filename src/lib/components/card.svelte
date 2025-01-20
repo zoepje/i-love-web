@@ -9,7 +9,7 @@
 </script>
 
 <article>
-  <img src="/images/{image}" alt="webite thumbnail">
+  <img src="/images/{image}" alt="webite thumbnail" width="450" height="280">
   <h2>{title}</h2>
   <p>{description}</p>
   <div>
