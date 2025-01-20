@@ -23,7 +23,8 @@ Maak scene 3 op een [fork](https://github.dev/joostf/GSAP-timelines/) van deze s
 
 ## 13 januarie 2025
 ### Clean code
-> Even bad code can be ...
+> Even bad code can function. But if code isn't clean, it can bring a development organization to its knees.
+> - Robert C. Martin
 
 Schrijven van clean code is wat je doet om jezelf professional te kunnen noemen. Code is clean als het gemakkelijk te begrijpen is door iedereen in het team. Begrijpelijk betekent: leesbaar, aanpasbaar, uitbreidbaar en onderhoudbaar.
 
@@ -45,7 +46,6 @@ Tips voor refactoring:
 - Patroon: Hernoem functie declaratie
     - De handtekening van een functie omvat de naam, parameters, en soms het returntype
 - Patroon: Splits conditionals op
-    - Complexe
 - Patroon: vervang loops door piplines
     - Traditionele iteraties over collecties worden vervangen door een functionele stijl met behulp van een pipeline van operaties.
 - Patroon: verwijder dode code

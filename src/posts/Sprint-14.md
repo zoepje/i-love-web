@@ -185,60 +185,6 @@ Projectmethodiek
   <dt>MoSCoW</dt>
   <dd>Must haves, Should haves, Could haves and Won't have this time around.</dd>
 
-  <dt>Optimum viable product</dt>
-  <dd></dd>
-
-  <dt>Planning poker</dt>
-  <dd></dd>
-
-  <dt>Product owner</dt>
-  <dd></dd>
-
-  <dt>Refactoring</dt>
-  <dd></dd>
-
-  <dt>Retrospective</dt>
-  <dd></dd>
-
-  <dt>Release</dt>
-  <dd></dd>
-
-  <dt>Scrum</dt>
-  <dd></dd>
-
-  <dt>Scrum master</dt>
-  <dd></dd>
-
-  <dt>Scrum team</dt>
-  <dd></dd>
-
-  <dt>Sprint</dt>
-  <dd></dd>
-
-  <dt>Sprint goal</dt>
-  <dd></dd>
-
-  <dt>Sprint planning</dt>
-  <dd></dd>
-
-  <dt>Sprint review</dt>
-  <dd></dd>
-
-  <dt>Stand-up</dt>
-  <dd></dd>
-
-  <dt>Stakeholders</dt>
-  <dd></dd>
-
-  <dt>Task</dt>
-  <dd></dd>
-
-  <dt>Task board</dt>
-  <dd></dd>
-
-  <dt>Task points</dt>
-  <dd></dd>
-
   <dt>Velocity</dt>
   <dd>De hoeveelheid poker punten je af hebt gekregen in een bepaalde periode.</dd>
 </dl>
