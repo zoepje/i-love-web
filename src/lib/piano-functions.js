@@ -163,6 +163,6 @@ export function stopAllNotes() {
   activeOscillators.forEach(stopNote);
   activeOscillators = []
 
-  const activeKeys = document.querySelectorAll(".active");
+  const activeKeys = document.querySelectorAll(".key.active");
   activeKeys.forEach((key) => key.classList.remove("active"));
 }

@@ -1,6 +1,6 @@
-<script lang="ts">
+<script>
 	import Toggle from './toggle.svelte';
-  import { page } from "$app/stores";
+  import { page } from '$app/stores';  
 </script>
 
 <nav>
