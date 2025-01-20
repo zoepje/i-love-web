@@ -207,6 +207,15 @@ li::marker {
 	margin-top: 0;
 }
 
+.prose span.tip {
+	font-weight: bold;
+	border-inline-start-width: var(--border-size-3);
+}
+
+.prose span.tip::before {
+	content: "💡";
+}
+
 .prose :is(ul, ol) {
 	padding-left: var(--size-5);
 }

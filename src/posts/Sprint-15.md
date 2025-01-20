@@ -85,7 +85,7 @@ Onze core:
 
 ### Techstack onderzoek
 > Het is door logica dat we bewijzen. Het is door intuitie dat we ondekken.
-> Henri Poincaré
+> - Henri Poincaré
 
 Logica is een systeem voor solide argumentatie.
 
@@ -210,8 +210,7 @@ Je kunt ook stukjes code in de layouts inlaaden. In de map `_includes` maak je e
 </head>
 ```
 
-> 💡 **Tip:**
-> Download extention nunjucks snippets
+<p><span class="tip">Tip:</span> Download extention nunjucks snippets</p>
 
 Als je een layout wilt hebben die lijkt op een andere layout maar met een kleine verandering kun je dat doen met: 
 
