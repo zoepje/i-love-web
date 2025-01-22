@@ -91,3 +91,54 @@ Je Three.js
 - [Codrops](https://tympanus.net/codrops/)
 - [The book of shaders](https://thebookofshaders.com/)
 - [The coding train](https://thecodingtrain.com/)
+
+## 22 januari 2025
+Van offerte tot oplevering
+
+### Vraag
+Hoe kom je aan projecten? Netwerk, Netwerk, Netwerk
+
+### Gesprek
+Wat wil de opdrachtgever?
+- Briefing
+- Verwachtingen
+- Wat kan jij, wat kan ik.
+- Nee zeggen, wil ik dit wel?
+
+### Offerte
+Lang kort maakt niet zoveel uit:
+1. Wat ga je doen
+1. Begroting 
+    - Lage en hoge inschatting
+    - Uur tarief check the good list
+1. Planning & afspraken
+1. Algemene voorwaarden (FENIT)
+
+### Design
+Van schetsen naar ontwerp
+- Grove schetsen laten zien
+- Daarna high fi
+- En dan snel bouwen
+- Design changes on the way
+
+### Development
+Bouwen, bouwen, bouwen
+- Fundering, data model
+- Framework kiezen
+- CMS? Zeker doen
+- Testen
+- Acceptatie omgeving opzetten (klant kan kijken wat je hebt gemaakt maar nog niet live)
+
+### Oplevering
+Feetje & Money time
+- Afspraken over oplevering (nooit op een vrijdag, liefts maandag)
+- Garantie, bug fixing
+- Factuur sturen (gebruik een systeem)
+- Track je uren ALTIJD
+
+### Service level agrement (SLA)
+Maak afspraken voor na de oplevering:
+- Hostingkosten? 
+- Updates?
+- Maandelijkse vaste uren?
+- Nacalculatie?
