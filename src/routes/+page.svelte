@@ -23,7 +23,6 @@
   description = "A platform for radio therapists to exchange knowledge"
   site = "https://oncollaboration.agency.fdnd.nl/"
   repo = "https://github.com/fdnd-agency/antoni-van-leeuwenhoek-oncology/tree/release-candidate"
-  status = {false}
   />
 
   <Card 
