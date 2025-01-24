@@ -296,7 +296,7 @@
   </div> 
 
   <div class="audio-api ex">
-    <h2>Audio API</h2>
+    <h2>Stereo</h2>
     <section class="master-controls">
 			<input bind:this={volumeControl} type="range" id="volume" class="control-volume" min="0" max="2" value="1" list="gain-vals" step="0.01" data-action="volume" />
 			<datalist id="gain-vals">
