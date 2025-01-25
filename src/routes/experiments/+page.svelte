@@ -683,12 +683,6 @@
     display: none;
   }
 
-  @media (hover: hover){
-    .piano p {
-      display: block;
-    }
-  }
-
   .container-keyboard {
     max-width: calc(100vw - 7rem);
     overflow-x: scroll;
@@ -734,10 +728,6 @@
     z-index: 2;
   }
 
-  .key:hover {
-    background-color: var(--color-1);
-  }
-
   .key:active,
   .active {
     background-color: var(--color-2);
@@ -762,6 +752,16 @@
 
   .songs {
     padding-top: 1rem;
+  }
+
+  @media (hover: hover){
+    .piano p {
+      display: block;
+    }
+
+    .key:hover {
+      background-color: var(--color-1);
+    }
   }
   /* #endregion Keyboard */
 </style>
