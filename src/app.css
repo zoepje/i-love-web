@@ -102,6 +102,10 @@ html {
 	background-attachment: fixed;
 }
 
+:where(textarea,select,input:not([type=button],[type=submit],[type=reset])) {
+	background-color: var(--surface-2);
+}
+
 h1 {
 	font-size: var(--font-size-7);
 	margin-bottom: 1.5rem;
