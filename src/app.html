@@ -7,11 +7,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		%sveltekit.head%
 		<script type="module">
-			const theme = localStorage.getItem('color-scheme')
-
-			theme
-				? document.documentElement.setAttribute('color-scheme', theme)
-			  : localStorage.setItem('color-scheme', 'dark')
+			const theme = localStorage.getItem('color-scheme') || 'dark';
+			localStorage.setItem('color-scheme', theme); // Save the theme if it wasn't already set
+			document.documentElement.setAttribute('color-scheme', theme);
 		</script>
 	</head>
 	<body data-sveltekit-preload-data="hover">
