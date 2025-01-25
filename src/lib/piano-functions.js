@@ -3,12 +3,20 @@ let oscList = [];
 let gainPiano;
 let activeTimeouts = [];
 let activeOscillators = [];
+let sineTerms = null;
+let cosineTerms = null;
+let oldPhoneWave = null;
+
 import { songs } from "$lib/songs";
 // Initialize AudioContext
 export function initPiano() {
   audioCtx = new (window.AudioContext || window.webkitAudioContext)();
   gainPiano = audioCtx.createGain();
   gainPiano.connect(audioCtx.destination);
+
+  sineTerms = new Float32Array([0, 0, 0, 1, 1]);
+  cosineTerms = new Float32Array(sineTerms.length);
+  oldPhoneWave = audioCtx.createPeriodicWave(cosineTerms, sineTerms);
 
   // Create oscillator list for each key
   for (let i = 0; i < 256; i++) {
@@ -25,7 +33,13 @@ export function playNote(freq, waveform = "sine") {
   const osc = audioCtx.createOscillator();
   const gain = audioCtx.createGain();
 
-  osc.type = waveform; // Set the waveform type (sine, square, etc.)
+  const type = waveform; // Set the waveform type (sine, square, etc.)
+  if (type === "old-phone") {
+    osc.setPeriodicWave(oldPhoneWave);
+  } else {
+    osc.type = type;
+  }
+
   osc.frequency.value = freq;
 
   osc.connect(gain);
