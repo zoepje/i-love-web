@@ -51,6 +51,10 @@
     width: 0;
   }
 
+  img {
+    border: 2px solid var(--brand);
+  }
+
   h2 {
     padding-top: var(--size-3);
     font-size: var(--font-size-4);
