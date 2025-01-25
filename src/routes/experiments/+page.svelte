@@ -512,6 +512,12 @@
 
         transform: rotate(45deg);
         width: 80%;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        touch-action: none;
+        -webkit-touch-callout: none;
         
         & .trigger {
           cursor: pointer;
@@ -707,6 +713,8 @@
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
+    touch-action: none;
+    -webkit-touch-callout: none;
   }
 
   .white-key {
