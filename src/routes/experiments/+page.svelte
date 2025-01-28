@@ -1,5 +1,6 @@
 <script>
 	import * as config from '$lib/config';
+  import { Dachshund } from "$lib/index";
   import { createNoteTable, stopNote, playNote, initPiano, playSong, stopAllNotes } from "$lib/piano-functions";
   import { songs } from '$lib/songs.js';
   import { onMount } from 'svelte';
@@ -206,6 +207,9 @@
   </div>
 
   <div class="container-guitar ex">
+    <section bind:this={sectionColor} class:active={an} style="--old-color: red; --new-color: red;">
+      <h2>Strum the guitar to change my color</h2>
+    </section>
     <div class="guitar">
       <label><input id="sound" type="checkbox" value="sound" checked on:change={toggleSoundOnOff}>Sound</label>
       <svg class="guitarSVG" viewBox="0 0 1256 3200">
@@ -299,10 +303,6 @@
       </svg>
       <audio bind:this={mySound} src='/strum.wav' />  
     </div>
-    
-    <section bind:this={sectionColor} class:active={an} style="--old-color: red; --new-color: red;">
-      <h2>Strum and change my color</h2>
-    </section>
   </div> 
 
   <div class="stereo ex">
@@ -406,6 +406,19 @@
         {/each}
       </select> 
     </div>
+  </div>
+
+  <div class="dog ex">
+    <h2>Doggie</h2>
+    <svg class="dachshund-animation" xmlns="http://www.w3.org/2000/svg" viewBox="-50 0 1200 1080" width="500" class:animate={animations['dog']}>
+      <Dachshund/>
+    </svg>
+    
+
+    <button on:click={() => toggleAnimation('dog')}>
+      <span class:hide="{animations['dog']}">Animate me</span>
+      <span class="stop" class:show="{animations['dog']}">Stop</span>
+    </button>
   </div>
 </div>
 
@@ -543,6 +556,7 @@
         color: black;
         text-align: center;
         margin-block: auto;
+        font-size: 2rem;
       }
     }
   }
@@ -772,6 +786,19 @@
     }
   }
   /* #endregion Keyboard */
+
+  /* #region Dog */
+  .dog {
+    position: relative;
+  }
+
+  .dachshund-animation {
+    background-color: #98739a;
+    max-height: 70%;
+    width: 100%;
+  }
+
+  /* #endregion Dog */
 </style>
 
 

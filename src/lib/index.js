@@ -5,5 +5,6 @@ import Navigation from "./components/navigation.svelte";
 import Toggle from "./components/toggle.svelte";
 import PageTransition from "./components/transition.svelte";
 import GithubMarkWhite from "./components/github-mark-white.svelte";
+import Dachshund from "./components/dachshund.svelte";
 
-export {Card, ExternalLink, Footer, Navigation, Toggle, PageTransition, GithubMarkWhite}
+export {Card, ExternalLink, Footer, Navigation, Toggle, PageTransition, GithubMarkWhite, Dachshund}
