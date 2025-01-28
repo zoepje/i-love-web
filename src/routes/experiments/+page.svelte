@@ -700,15 +700,13 @@
   .key {
     cursor: pointer;
     border: 1px solid black;
-    border-radius: 5px;
+    border-radius: 2px;
     display: inline-block;
     position: relative;
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
-    touch-action: none;
-    -webkit-touch-callout: none;
   }
 
   .white-key {
