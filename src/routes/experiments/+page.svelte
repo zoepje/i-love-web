@@ -143,10 +143,6 @@
     const keys = document.querySelectorAll(".key");
 
     keys.forEach((key) => {
-      key.addEventListener("mousedown", startNoteHandler);
-      key.addEventListener("mouseup", stopNoteHandler);
-      key.addEventListener("mouseleave", stopNoteHandler);
-
       key.addEventListener("touchstart", startNoteHandler);
       key.addEventListener("touchend", stopNoteHandler);
     });
