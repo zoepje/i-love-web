@@ -58,7 +58,7 @@
   }
   // #endregion Guitar
 
-  // #region Audio API
+  // #region Stereo
   let audioElement; 
   let playButton; 
   let playing = false;
@@ -124,7 +124,7 @@
       playing = false;
     });
   });
-  // #endregion Audio API
+  // #endregion Stereo
 
   // #region Piano
   let keyboard;
@@ -136,7 +136,21 @@
 
   onMount(() => {
     initPiano(); // Initialize AudioContext
+    initializeAllKeys();
   });
+
+  function initializeAllKeys() {
+    const keys = document.querySelectorAll(".key");
+
+    keys.forEach((key) => {
+      key.addEventListener("mousedown", startNoteHandler);
+      key.addEventListener("mouseup", stopNoteHandler);
+      key.addEventListener("mouseleave", stopNoteHandler);
+
+      key.addEventListener("touchstart", startNoteHandler);
+      key.addEventListener("touchend", stopNoteHandler);
+    });
+  }
 
   function startNoteHandler(event) {
     const key = event.target.getAttribute("data-note");
@@ -195,7 +209,7 @@
     </button>
   </div>
 
-  <div class="container-interaction ex">
+  <div class="container-guitar ex">
     <div class="guitar">
       <label><input id="sound" type="checkbox" value="sound" checked on:change={toggleSoundOnOff}>Sound</label>
       <svg class="guitarSVG" viewBox="0 0 1256 3200">
@@ -295,7 +309,7 @@
     </section>
   </div> 
 
-  <div class="audio-api ex">
+  <div class="stereo ex">
     <h2>Stereo</h2>
     <section class="master-controls">
 			<input bind:this={volumeControl} type="range" id="volume" class="control-volume" min="0" max="2" value="1" list="gain-vals" step="0.01" data-action="volume" />
@@ -483,7 +497,7 @@
   /* #endregion Variable-fonts */
 
   /* #region Guitar */
-  .container-interaction {
+  .container-guitar {
     & .guitar {
       height: 40%;
       display: flex;
@@ -558,13 +572,13 @@
     }
   }
 
-  .container-interaction section.active {
+  .container-guitar section.active {
     animation: colorChange 1s;
   }
   /* #endregion Guitar */
 
-  /* #region AudioAPI */
-  .audio-api {
+  /* #region Stereo */
+  .stereo {
     position: relative;
   }
 
@@ -676,7 +690,7 @@
     content: 'right';
   }
 
-  /* #endregion AudioAPI */
+  /* #endregion Stereo */
 
   /* #region Keyboard */
   .piano p {
@@ -722,7 +736,7 @@
     height: 40px;
     box-shadow: 0 2px rgb(49, 49, 49);
     background-color: var(--surface-2-dark);
-    top: -38px;
+    top: -39px;
     z-index: 2;
   }
 
