@@ -288,3 +288,8 @@ a:hover::before {
 		font-size: var(--font-size-8);
 	}
 }
+
+:focus {
+	outline: 2px solid var(--brand);
+	border-radius: var(--radius-2);
+}
