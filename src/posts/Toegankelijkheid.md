@@ -1,28 +1,81 @@
 ---
-title: Toegankelijkheid
-description: Vasilis van Gemert
-date: '2024-09-13'
+title: Toegangelijkheid
+description: Johan, Marie
+date: '2023-09-19'
 categories:
   - we love web
-published: true
+published: True
 ---
 
 ## Table of Contents
 
-## We Love Web
+## Wat is digitale toegankelijkheid? (Johan)
 
-### Websites
-- [Vasilis](https://vasilis.nl) 
-- [Love Nonsense](https://lovenonsence.com)
-  - De poppetjes zijn een lettertype
-  - Onzin is nuttig
-- [Flipping things](https://vasilis.nl/flipping-things)
-- [Clocks](https://vasilis.nl/clocks)
+### De mensen
 
-### Toegankelijkheid
-- Toegenkelijkheid zorgt ervoor dat iedereen gebruik kan maken van dingen.
-- Ga erin veder dan de standaard richtlijnen. Denk er echt overna hoe mensen met beperkingen gebruik zouden kunnen maken van je website.
-- Screenreaders lezen echt alles voor.
+- Werkt het ook in de praktijk?
+  - Betrek mensen erbij.
+- Wie?
+  - Slechtzienden
+  - Slechthorenden
+  - Motorische beperking
+  - Verstandelijk beperkt
+  - Laaggeletterd
+  - Ouderen
+  - De helft van alle mensen met een mobiele telefoon gebruikt toegankelijkheid functies.
+- Focus op behoefte van mensen
+- Web content accessibility guidelines
 
-> "Maak leuke dingen!" 
-> - Vasilis van Gemert
+### Digitale toegankelijkheid in een notendop
+
+1. Wat als je niet goed kunt zien?
+   - Schermlezer
+     - Heel belangrijk om de hiërarchie aangegeven
+   - Hoe klinkt mijn website?
+1. Wat als je niet goed kunt horen?
+   - Captions
+1. Walt als je niet goed kunt bewegen?
+   - Blauwe lijntjes (focus ring) is belangrijke feedback
+1. Walt als je het niet goed snapt?
+   - Houd de website simple
+
+## Inclusive Design, more than you hear (Marie)
+
+### Gebarentaal
+
+- Gebarentaal is een ander taal dan Nederlands
+- Nederlands is hun tweede taal
+- Grammatica structuur is anders
+
+### Tips
+
+- Gebruik Headings en subheadings
+- Maak je punt eerst en dan uitleggen
+- Visuele inhoud
+- Witruimtes
+- Simpele taal
+- Lezen kost energie
+
+### Subtitles/ CC
+
+- Ondertiteling is alleen de taal
+- CC daar zitten ook de geluiden in. Wie wat zegt
+  - Niet alleen doven mensen gebruiken het
+  - Goed voor SEO
+
+### Transcripts?
+
+- Letterlijke vertaling
+- Niet echt lekker lezen
+
+### Multimedia oplossingen
+
+- Native signer
+
+### Design thinking
+
+- _Empathize_ interact with us
+- Define
+- Ideate
+- Prototype
+- Test

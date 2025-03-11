@@ -9,27 +9,31 @@ published: True
 
 ## Table of Contents
 
-## We Love Web
+## A brief history in Voice Recognition
 
-### A brief history in Voice Recognition
-1950 was the first time we tried to work with speach recocnition.
+1950 was the first time we tried to work with speech recognition.
 Now you have live transcripts in a bunch of apps.
 
-### Speech web API
+## Speech web API
+
 How does it work:
+
 1. I speak
 2. useSpeechRecognition
 3. To ChatGPT
 
 How to use it [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API)
 
-#### Connecting to the AI
-How do i provide context?
+### Connecting to the AI
+
+How do I provide context?
+
 - How the AI is being used
 - The personality of the AI
-- The select role by the user
+- The selected role by the user
 
-### Sources
+## Sources
+
 - [Demo web speech api]()
 - [More in depth](https://techhub.iodigital.com/tags/voice)
 - [Dave Bitter](https://www.davebitter.com/)
