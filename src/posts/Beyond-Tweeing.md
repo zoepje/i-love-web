@@ -19,6 +19,7 @@ Is a framework with which you can animate UI, 2D and 3D. The depth of GSAP blows
 
 ### Tips for using GSAP
 
+[Slides](https://slides.com/cassiecodes/beyond-tweening/fullscreen?token=UPwX_bd_#/1)
 It seems like I stumble on something new and amazing every time I peek at the docs.
 
 GSAP is an animation toolbox. Look into what GSAP has to offer, this way you can maybe find an other easier soluton.
