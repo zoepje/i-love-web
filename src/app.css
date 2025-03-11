@@ -186,9 +186,13 @@ a:hover::before {
 	margin-bottom: var(--size-3);
 }
 
-.prose :is(h2) {
+.sprint .prose :is(h2),
+.prose :is(h2):nth-child(1) {
 	margin-bottom: var(--size-1);
 	font-size: var(--font-size-3);
+}
+
+.prose :is(h2){
 	color: var(--color-2);
 }
 
