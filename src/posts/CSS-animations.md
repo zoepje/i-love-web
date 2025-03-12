@@ -4,6 +4,7 @@ description: Julia Miocene
 date: '2023-12-15'
 categories:
   - we love web
+  - animations
 published: True
 ---
 

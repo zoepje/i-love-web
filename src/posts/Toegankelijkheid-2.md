@@ -4,6 +4,7 @@ description: Vasilis van Gemert
 date: '2024-09-13'
 categories:
   - we love web
+  - accessibility
 published: true
 ---
 

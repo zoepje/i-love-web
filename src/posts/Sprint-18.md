@@ -4,6 +4,9 @@ description: Release Candidate
 date: '2025-01-06'
 categories:
   - sprint
+  - entering the industry
+  - Animations
+  - best practices
 published: True
 ---
 ## Table of Contents

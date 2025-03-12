@@ -4,6 +4,7 @@ description: Sanne Swagerman
 date: '2024-05-24'
 categories:
   - we love web
+  - Entering the Industry
 published: True
 ---
 

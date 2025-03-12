@@ -4,6 +4,7 @@ description: Dave Bitter
 date: '2025-01-17'
 categories:
   - we love web
+  - AI
 published: True
 ---
 

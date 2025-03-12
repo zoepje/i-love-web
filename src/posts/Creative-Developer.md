@@ -4,6 +4,7 @@ description: Nicolas Garnier
 date: '2024-10-04'
 categories:
   - we love web
+  - animations
 published: True
 ---
 

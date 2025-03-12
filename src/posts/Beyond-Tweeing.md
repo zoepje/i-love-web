@@ -4,6 +4,7 @@ description: Cassie Evans
 date: '2025-03-07'
 categories:
   - we love web
+  - animations
 published: True
 ---
 

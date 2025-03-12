@@ -4,6 +4,7 @@ description: Simon Riisnæs Dagfinrud - NOKO
 date: '2024-02-16'
 categories:
   - we love web
+  - performance
 published: True
 ---
 

@@ -4,6 +4,7 @@ description: Ischa Gast
 date: '2023-11-03'
 categories:
   - we love web
+  - accessibility
 published: True
 ---
 

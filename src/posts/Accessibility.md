@@ -4,6 +4,7 @@ description: Fenna de Wilde
 date: '2024-01-19'
 categories:
   - we love web
+  - accessibility
 published: True
 ---
 

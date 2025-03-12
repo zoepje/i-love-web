@@ -39,7 +39,7 @@ published: True
 
 ## Waar we rekening mee houden
 
-- Elke organisatie heeft eer eigen huistijl
+- Elke organisatie heeft een eigen huistijl
 - Elke organisatie laat eigen digitale producten bouwen
 - Code en design in sync
 - Open source voor iedereen te gebruiken

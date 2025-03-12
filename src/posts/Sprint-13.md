@@ -4,7 +4,6 @@ description: Your tribe for live
 date: '2024-09-02'
 categories:
   - svelte
-  - sveltekit
   - sprint
 published: true
 ---

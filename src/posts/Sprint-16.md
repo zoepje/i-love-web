@@ -4,6 +4,7 @@ description: Don't repeat yourself
 date: '2024-11-11'
 categories:
   - sprint
+  - design
 published: True
 ---
 
