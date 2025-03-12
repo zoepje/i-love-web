@@ -1,39 +1,66 @@
 <script lang="ts">
-  import { formatDate } from '$lib/utils';
-	import * as config from '$lib/config'
-  export let data;
+	import { formatDate } from '$lib/utils';
+	import * as config from '$lib/config';
+	import { goto } from '$app/navigation';
+	export let data;
+
+	let selectedCategories: Set<string> = new Set(data.selectedCategories);
+
+	function toggleCategory(category: string) {
+		if (selectedCategories.has(category)) {
+			selectedCategories.delete(category);
+		} else {
+			selectedCategories.add(category);
+		}
+		const query = Array.from(selectedCategories).join(',');
+		goto(query ? `?categories=${query}` : '/notes', { replaceState: true });
+	}
 </script>
 
 <svelte:head>
-  <title>{config.title} - Notes</title>
+	<title>{config.title} - Notes</title>
 </svelte:head>
 
 <h1>Notes</h1>
+<form class="categories">
+	{#each data.allCategories as category}
+		<input
+			type="checkbox"
+			id={category}
+			name={category}
+			value={category}
+			on:change={() => toggleCategory(category)}
+			checked={selectedCategories.has(category)}
+		/>
+		<label for={category} class="surface-4 category">{category}</label>
+	{/each}
+</form>
+
 <ul class="posts">
-  {#each data.posts as post }
-    <li class="post">
-      <a href="notes/{post.slug}" class="title">{post.title}</a>
-      <p class="date">{formatDate(post.date)}</p>
-      <p class="description">{post.description}</p>
-    </li>
-  {/each}
+	{#each data.posts as post}
+		<li class="post">
+			<a href="notes/{post.slug}" class="title">{post.title}</a>
+			<p class="date">{formatDate(post.date)}</p>
+			<p class="description">{post.description}</p>
+		</li>
+	{/each}
 </ul>
 
 <style>
-  h1 {
-    margin-inline: auto;
-    text-align: center;
-  }
+	h1 {
+		margin-inline: auto;
+		text-align: center;
+	}
 
-  .posts {
-    list-style: none;
-    display: grid;
-    gap: var(--size-7);
-    max-inline-size: var(--size-content-3);
-    margin-inline: auto;
-  }
+	.posts {
+		list-style: none;
+		display: grid;
+		gap: var(--size-7);
+		max-inline-size: var(--size-content-3);
+		margin-inline: auto;
+	}
 
-  .post {
+	.post {
 		max-inline-size: var(--size-content-4);
 	}
 
@@ -45,19 +72,49 @@
 	.title {
 		font-size: var(--font-size-fluid-3);
 		text-transform: capitalize;
-    color: var(--brand);
+		color: var(--brand);
 	}
 
-  .title:visited{
-    color: var(--color-1);
-  }
+	.title:visited {
+		color: var(--color-1);
+	}
 
 	.date {
-    text-transform: capitalize;
+		text-transform: capitalize;
 		color: var(--text-2);
 	}
 
 	.description {
 		margin-top: var(--size-3);
+	}
+
+	.categories {
+		display: flex;
+		gap: var(--size-3);
+		width: fit-content;
+		margin-inline: auto;
+	}
+
+	.categories input {
+		position: absolute;
+		top: -9999em;
+	}
+
+	.categories input:checked + .category {
+		background-color: var(--color-1);
+		color: var(--text-alt);
+	}
+
+	.categories input:focus-visible + .category {
+		outline: 2px solid var(--brand);
+	}
+
+	.category {
+		padding: var(--size-2) var(--size-3);
+		border-radius: var(--radius-round);
+	}
+
+	.category:hover {
+		outline: 2px solid var(--brand);
 	}
 </style>

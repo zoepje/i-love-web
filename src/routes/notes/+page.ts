@@ -1,8 +1,21 @@
-import type { Post } from "$lib/types"
+import type { Post } from '$lib/types';
 
-export async function load({ fetch }: {fetch:any}) {
-  const response = await fetch('api/posts')
-  const posts: Post[] = await response.json()
+async function fetchPosts(fetch: any): Promise<Post[]> {
+	const response = await fetch('api/posts');
+	const posts: Post[] = await response.json();
+	return posts;
+}
 
-  return { posts }
+export async function load({ fetch, url }: { fetch: any; url: URL }) {
+	const selectedCategories = url.searchParams.get('categories')?.split(',') || [];
+	const posts = await fetchPosts(fetch);
+	const allCategories = Array.from(new Set(posts.flatMap((post) => post.categories)));
+
+	const filteredPosts = selectedCategories.length
+		? posts.filter((post) =>
+				post.categories.some((category) => selectedCategories.includes(category))
+			)
+		: posts;
+
+	return { posts: filteredPosts, allCategories, selectedCategories };
 }
