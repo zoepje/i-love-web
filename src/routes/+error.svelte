@@ -1,5 +1,5 @@
 <script>
-	import { page } from '$app/stores'
+	import { page } from '$app/stores';
 </script>
 
 <section class="error">
@@ -12,5 +12,10 @@
 		height: 100%;
 		display: grid;
 		place-content: center;
+		justify-items: center;
+	}
+
+	a {
+		width: fit-content;
 	}
 </style>

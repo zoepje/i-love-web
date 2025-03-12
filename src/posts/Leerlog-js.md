@@ -4,7 +4,7 @@ description: Bij houden van wat ik over JS leer
 date: '2024-04-18'
 lastUpdated: '2024-05-31'
 categories:
-  - Leerlog
+  - leerlog
 published: True
 ---
 
