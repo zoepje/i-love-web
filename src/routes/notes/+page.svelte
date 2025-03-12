@@ -90,6 +90,7 @@
 
 	.categories {
 		display: flex;
+		flex-wrap: wrap;
 		gap: var(--size-3);
 		width: fit-content;
 		margin-inline: auto;
@@ -112,7 +113,7 @@
 	.category {
 		padding: var(--size-2) var(--size-3);
 		border-radius: var(--radius-round);
-		text-transform: lowercase;
+		text-transform: capitalize;
 	}
 
 	.category:hover {
