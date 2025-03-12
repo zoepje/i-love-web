@@ -112,6 +112,7 @@
 	.category {
 		padding: var(--size-2) var(--size-3);
 		border-radius: var(--radius-round);
+		text-transform: lowercase;
 	}
 
 	.category:hover {
