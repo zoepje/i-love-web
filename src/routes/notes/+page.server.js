@@ -1,14 +1,17 @@
-import type { Post } from '$lib/types';
+/**
+ * @typedef {import('$lib/types').Post} Post
+ */
 
-async function fetchPosts(fetch: any): Promise<Post[]> {
+async function fetchPosts(fetch) {
 	const response = await fetch('api/posts');
-	const posts: Post[] = await response.json();
+	const posts = await response.json();
 	return posts;
 }
 
-export async function load({ fetch, url }: { fetch: any; url: URL }) {
+export async function load({ fetch, url }) {
+	const searchParams = new URL(url).searchParams;
 	const selectedCategories =
-		url.searchParams
+		searchParams
 			.get('categories')
 			?.split(',')
 			.map((cat) => cat.toLowerCase()) || [];
