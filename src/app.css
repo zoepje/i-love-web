@@ -64,7 +64,9 @@ html {
 	--background: var(--background-dark);
 	--border: var(--border-dark);
 
-	:where(.btn,button,input:is([type=button],[type=submit],[type=reset])), :where(input[type=file])::-webkit-file-upload-button, :where(input[type=file])::file-selector-button {
+	:where(.btn, button, input:is([type='button'], [type='submit'], [type='reset'])),
+	:where(input[type='file'])::-webkit-file-upload-button,
+	:where(input[type='file'])::file-selector-button {
 		--_highlight: var(--_highlight-dark);
 		--_bg: var(--_bg-dark);
 		--_ink-shadow: var(--_ink-shadow-dark);
@@ -102,7 +104,7 @@ html {
 	background-attachment: fixed;
 }
 
-:where(textarea,select,input:not([type=button],[type=submit],[type=reset])) {
+:where(textarea, select, input:not([type='button'], [type='submit'], [type='reset'])) {
 	background-color: var(--surface-2);
 }
 
@@ -130,7 +132,7 @@ li::marker {
 
 a {
 	position: relative;
-	transition: .3s ease-in-out;
+	transition: 0.3s ease-in-out;
 }
 
 a:before {
@@ -144,7 +146,7 @@ a:before {
 	left: 0;
 	transform-origin: right;
 	transform: scaleX(0);
-	transition: transform .3s ease-in-out;
+	transition: transform 0.3s ease-in-out;
 }
 
 a:hover {
@@ -153,7 +155,7 @@ a:hover {
 
 a:hover::before {
 	transform-origin: left;
-  transform: scaleX(1);
+	transform: scaleX(1);
 }
 
 .surface-1 {
@@ -176,9 +178,32 @@ a:hover::before {
 	color: var(--text-1);
 }
 
-/* ... */
+.skip-to-content {
+	position: absolute;
+	transform: translateY(-99em);
+	transition: transform 0.3s;
+}
+
+.skip-to-content:focus {
+	transform: translateY(-2em);
+}
+
+:focus-visible {
+	outline: 2px solid var(--brand);
+	border-radius: var(--radius-2);
+}
+
+:where(a[href]) svg path {
+	fill: var(--brand, var(--link));
+}
+
+:where(a[href]):where(:visited) svg path {
+	fill: var(--link-visited);
+}
+
+/* #region Styling posts */
 .prose {
-	max-width: calc(100vw - 2*var(--size-7));
+	max-width: calc(100vw - 2 * var(--size-7));
 }
 
 .prose :is(h2, h3, h4, h5, h6) {
@@ -192,7 +217,7 @@ a:hover::before {
 	font-size: var(--font-size-3);
 }
 
-.prose :is(h2){
+.prose :is(h2) {
 	color: var(--color-2);
 }
 
@@ -214,7 +239,7 @@ a:hover::before {
 }
 
 .prose span.tip::before {
-	content: "💡";
+	content: '💡';
 }
 
 .prose :is(ul, ol) {
@@ -246,14 +271,15 @@ a:hover::before {
 	font-size: var(--font-size-1);
 }
 
-.prose .uitleg, .prose .uitleg-2 {
+.prose .uitleg,
+.prose .uitleg-2 {
 	padding-left: 10px;
 	font-style: italic;
 	font-size: var(--font-size-1);
 }
 
 .prose .uitleg {
-	color: var(--color-2); 
+	color: var(--color-2);
 }
 
 .prose .uitleg-2 {
@@ -266,24 +292,17 @@ a:hover::before {
 
 .prose dd {
 	max-inline-size: var(--size-content-3);
-}	
+}
 .prose img {
 	border: var(--color-1) var(--border-size-2) solid;
 }
 
-.prose :where(:not(pre)>code,kbd) {
+.prose :where(:not(pre) > code, kbd) {
 	white-space: wrap;
 }
+/* #endregion Styling posts */
 
-:where(a[href]) svg path {
-	fill: var(--brand, var(--link));
-}
-
-:where(a[href]):where(:visited) svg path {
-	fill: var(--link-visited);
-}
-
-@media only screen and (min-width: 600px){
+@media only screen and (min-width: 600px) {
 	body {
 		margin: var(--size-5);
 	}
@@ -291,9 +310,4 @@ a:hover::before {
 	h1 {
 		font-size: var(--font-size-8);
 	}
-}
-
-:focus-visible {
-	outline: 2px solid var(--brand);
-	border-radius: var(--radius-2);
 }

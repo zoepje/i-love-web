@@ -13,7 +13,7 @@
 			selectedCategories.add(category);
 		}
 		const query = Array.from(selectedCategories).join(',');
-		goto(query ? `?categories=${query}` : '/notes', { replaceState: true });
+		goto(query ? `?categories=${query}` : '/notes', {replaceState: true});
 	}
 </script>
 
@@ -23,20 +23,23 @@
 
 <h1>Notes</h1>
 <form class="categories">
+	<a href="#posts" class="skip-to-content">Skip filter</a>
 	{#each data.allCategories as category}
-		<input
-			type="checkbox"
-			id={category}
-			name={category}
-			value={category}
-			on:change={() => toggleCategory(category)}
-			checked={selectedCategories.has(category)}
-		/>
-		<label for={category} class="surface-4 category">{category}</label>
+		<fieldset>
+			<input
+				type="checkbox"
+				id={category}
+				name={category}
+				value={category}
+				on:change={() => toggleCategory(category)}
+				checked={selectedCategories.has(category)}
+			/>
+			<label for={category} class="surface-4 category">{category}</label>
+		</fieldset>
 	{/each}
 </form>
 
-<ul class="posts">
+<ul class="posts" id="posts">
 	{#each data.posts as post}
 		<li class="post">
 			<a href="notes/{post.slug}" class="title">{post.title}</a>
@@ -89,16 +92,26 @@
 	}
 
 	.categories {
-		display: flex;
-		flex-wrap: wrap;
-		gap: var(--size-3);
-		width: fit-content;
+		max-inline-size: var(--size-content-3);
 		margin-inline: auto;
+		display: flex;
+		overflow-x: scroll;
+		gap: var(--size-3);
+		margin-inline: auto;
+		padding: var(--size-3) var(--size-1);
+	}
+
+	.categories fieldset {
+		position: relative;
+		margin: 0;
+		padding: 0;
+		border: none;
 	}
 
 	.categories input {
 		position: absolute;
 		top: -9999em;
+		right: 0;
 	}
 
 	.categories input:checked + .category {
@@ -114,6 +127,7 @@
 		padding: var(--size-2) var(--size-3);
 		border-radius: var(--radius-round);
 		text-transform: capitalize;
+		white-space: nowrap;
 	}
 
 	.category:hover {
