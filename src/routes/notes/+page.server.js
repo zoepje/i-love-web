@@ -9,7 +9,7 @@ async function fetchPosts(fetch) {
 }
 
 export async function load({ fetch, url }) {
-	const searchParams = new URL(url?.toString(), 'http://localhost').searchParams;
+	const searchParams = new URL(url?.toString(), 'https://i-love-web.vercel.app/notes').searchParams;
 	const selectedCategories =
 		searchParams
 			.get('categories')
@@ -25,6 +25,8 @@ export async function load({ fetch, url }) {
 				post.categories.some((category) => selectedCategories.includes(category.toLowerCase()))
 			)
 		: posts;
+
+	console.log('Live URL:', url);
 
 	return { posts: filteredPosts, allCategories, selectedCategories };
 }
