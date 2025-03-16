@@ -26,7 +26,5 @@ export async function load({ fetch, url }) {
 			)
 		: posts;
 
-	console.log('Live URL:', url);
-
 	return { posts: filteredPosts, allCategories, selectedCategories };
 }
