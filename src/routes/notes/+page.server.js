@@ -9,7 +9,7 @@ async function fetchPosts(fetch) {
 }
 
 export async function load({ fetch, url }) {
-	const searchParams = new URL(url).searchParams;
+	const searchParams = new URL(url?.toString(), 'http://localhost').searchParams;
 	const selectedCategories =
 		searchParams
 			.get('categories')
