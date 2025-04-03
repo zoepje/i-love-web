@@ -13,7 +13,7 @@
 			selectedCategories.add(category);
 		}
 		const query = Array.from(selectedCategories).join(',');
-		goto(query ? `?categories=${query}` : '/notes', {replaceState: true});
+		goto(query ? `?categories=${query}` : '/notes', { replaceState: true });
 	}
 </script>
 
@@ -22,7 +22,7 @@
 </svelte:head>
 
 <h1>Notes</h1>
-<form class="categories">
+<!-- <form class="categories">
 	<a href="#posts" class="skip-to-content">Skip filter</a>
 	{#each data.allCategories as category}
 		<fieldset>
@@ -37,7 +37,7 @@
 			<label for={category} class="surface-4 category">{category}</label>
 		</fieldset>
 	{/each}
-</form>
+</form> -->
 
 <ul class="posts" id="posts">
 	{#each data.posts as post}
@@ -99,6 +99,8 @@
 		gap: var(--size-3);
 		margin-inline: auto;
 		padding: var(--size-3) var(--size-1);
+		-webkit-mask: linear-gradient(90deg, #0000, #000 5% 95%, #0000);
+		mask: linear-gradient(90deg, #0000, #000 5% 95%, #0000);
 	}
 
 	.categories fieldset {
