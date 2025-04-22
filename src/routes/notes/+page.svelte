@@ -22,7 +22,7 @@
 </svelte:head>
 
 <h1>Notes</h1>
-<!-- <form class="categories">
+<form class="categories">
 	<a href="#posts" class="skip-to-content">Skip filter</a>
 	{#each data.allCategories as category}
 		<fieldset>
@@ -37,7 +37,7 @@
 			<label for={category} class="surface-4 category">{category}</label>
 		</fieldset>
 	{/each}
-</form> -->
+</form>
 
 <ul class="posts" id="posts">
 	{#each data.posts as post}

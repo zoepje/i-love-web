@@ -1,14 +1,12 @@
-/**
- * @typedef {import('$lib/types').Post} Post
- */
+import type { Post } from '$lib/types';
 
-async function fetchPosts(fetch) {
+async function fetchPosts(fetch: any): Promise<Post[]> {
 	const response = await fetch('api/posts');
-	const posts = await response.json();
+	const posts: Post[] = await response.json();
 	return posts;
 }
 
-export async function load({ fetch, url }) {
+export async function load({ fetch, url }: { fetch: any; url: URL }) {
 	const searchParams = new URL(url?.toString(), 'https://i-love-web.vercel.app/notes').searchParams;
 	const selectedCategories =
 		searchParams
