@@ -158,6 +158,38 @@ a:hover::before {
 	transform: scaleX(1);
 }
 
+select {
+	border: var(--border-size-2) solid var(--border);
+	border-radius: var(--radius-2);
+	background-color: var(--surface-2);
+	transition: 0.4s;
+	appearance: base-select;
+	width: fit-content;
+	padding-inline: 1rem;
+}
+
+select::picker-icon {
+	transition: 0.4s rotate;
+}
+
+select:open::picker-icon {
+  rotate: 180deg;
+}
+
+::picker(select) {
+	appearance: base-select;
+	background-color: var(--surface-2);
+	padding-block: 1rem;
+	border: none;
+	border-radius: var(--radius-2);
+	top: calc(anchor(bottom) - 2px);
+	left: calc(anchor(left) + 2px);
+}
+
+option {
+	padding: .2rem 1rem;
+}
+
 .surface-1 {
 	background-color: var(--surface-1);
 	color: var(--text-2);
