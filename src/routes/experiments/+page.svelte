@@ -199,12 +199,12 @@
 
 	// #region Rubiks Cube
 	const cubeFaces = [
-		{ face: 'front', color: 'red' },
-		{ face: 'back', color: 'orange' },
-		{ face: 'left', color: 'green' },
-		{ face: 'right', color: 'blue' },
-		{ face: 'top', color: 'white' },
-		{ face: 'bottom', color: 'yellow' }
+		{ face: 'right', color: 'red' },
+		{ face: 'left', color: 'orange' },
+		{ face: 'back', color: 'green' },
+		{ face: 'front', color: 'blue' },
+		{ face: 'bottom', color: 'white' },
+		{ face: 'top', color: 'yellow' }
 	];
 	const blocksPerFace = 9;
 	// #endregion Rubiks Cube
@@ -570,9 +570,9 @@
 	</div>
 
 	<div class="cube ex">
-		<h2>Solve The Cube</h2>
+		<h2>The Cube</h2>
 
-		<div class="rubriks-cube">
+		<div class="rubiks-cube" class:animate={animations['cube']}>
 			{#each cubeFaces as { face, color }}
 				<div class="face {face}">
 					{#each Array(blocksPerFace) as _, i}
@@ -581,6 +581,11 @@
 				</div>
 			{/each}
 		</div>
+
+		<button on:click={() => toggleAnimation('cube')}>
+			<span class:hide={animations['cube']}>Animate me</span>
+			<span class="stop" class:show={animations['cube']}>Stop</span>
+		</button>
 	</div>
 </div>
 
@@ -1056,6 +1061,106 @@
 		max-height: 70%;
 		width: 100%;
 	}
-
 	/* #endregion Dog */
+
+	/* #region Rubiks Cube */
+	.cube {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		perspective:  800px;
+
+		& h2 {
+			position: absolute;
+			top: 20px;
+			left: 20px;
+		}
+	}
+
+	.rubiks-cube {
+		position: relative;
+		width: 100px;
+		height: 100px;
+		transform-style: preserve-3d;
+		transform: rotateX(-30deg) rotateY(30deg);
+	}
+
+	.rubiks-cube.animate {
+		animation: rotate 10s infinite linear;
+	}
+
+	@keyframes rotate {
+		0% {
+			transform: rotateX(-30deg) rotateY(30deg);
+		}
+		50% {
+			transform: rotateX(30deg) rotateY(210deg);
+		}
+		100% {
+			transform: rotateX(-30deg) rotateY(390deg);
+		}
+	}
+
+	.face {
+		position: absolute;
+		width: 100px;
+		height: 100px;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(3, 1fr);
+		border: 2px solid #1c1c1c;
+	}
+
+	.block {
+		border: 1px solid #1c1c1c;
+	}
+
+	.red {
+		background-color: #b71234;
+	}
+
+	.orange {
+		background-color: #ff5800;
+	}
+
+	.blue {
+		background-color: #0046ad;
+	}
+
+	.green {
+		background-color: #009b48;
+	}
+
+	.yellow {
+		background-color: #ffd500;
+	}
+
+	.white {
+		background-color: white;
+	}
+
+	.front {
+		transform: rotateY(0deg) translateZ(50px);
+	}
+
+	.back {
+		transform: rotateY(180deg) translateZ(50px);
+	}
+
+	.left {
+		transform: rotateY(-90deg) translateZ(50px);
+	}
+
+	.right {
+		transform: rotateY(90deg) translateZ(50px);
+	}
+
+	.top {
+		transform: rotateX(90deg) translateZ(50px);
+	}
+
+	.bottom {
+		transform: rotateX(-90deg) translateZ(50px);
+	}
+	/* #endregion Rubiks Cube */
 </style>
