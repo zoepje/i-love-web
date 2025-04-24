@@ -173,7 +173,7 @@ select::picker-icon {
 }
 
 select:open::picker-icon {
-  rotate: 180deg;
+	rotate: 180deg;
 }
 
 ::picker(select) {
@@ -187,7 +187,19 @@ select:open::picker-icon {
 }
 
 option {
-	padding: .2rem 1rem;
+	padding: 0.2rem 1rem;
+}
+
+.button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--surface-3);
+	border: var(--border-size-2) solid var(--surface-3);
+	border-radius: var(--radius-2);
+	color: var(--text-1);
+	font-weight: var(--font-weight-7);
+	padding: 0.5rem 1rem;
 }
 
 .surface-1 {

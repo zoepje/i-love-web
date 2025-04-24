@@ -587,9 +587,21 @@
 			<span class="stop" class:show={animations['cube']}>Stop</span>
 		</button>
 	</div>
+
+	<div class="memo ex">
+		<div class="underconstruction">
+			<p>Under Construction</p>
+			<p>Under Construction</p>
+		</div>
+		<h2>Memo</h2>
+		
+		<div class="preview"></div>
+		<a href="/experiments/memo" class="button">Play memo</a>
+	</div>
 </div>
 
 <style>
+	/* #region General */
 	h1 {
 		margin-inline: auto;
 		text-align: center;
@@ -604,6 +616,7 @@
 	}
 
 	.ex {
+		position: relative;
 		flex: 1 1;
 		min-width: 250px;
 		max-width: 600px;
@@ -653,7 +666,8 @@
 		display: block;
 	}
 
-	button {
+	button,
+	.button {
 		width: calc(100% - (2 * var(--size-4)));
 		position: absolute;
 		bottom: 0;
@@ -665,6 +679,8 @@
 			min-width: 400px;
 		}
 	}
+
+	/* #endregion General */
 
 	/* #region Variable-fonts */
 	@keyframes fonts {
@@ -1194,4 +1210,14 @@
 		transform: rotateX(-90deg) translateZ(50px);
 	}
 	/* #endregion Rubiks Cube */
+
+	/* #region Memo */
+	.preview {
+		width: 100%;
+		height: 70%;
+		background-color: var(--surface-2);
+		border-radius: var(--radius-4);
+		margin-block: 1rem;
+	}
+	/* #endregion Memo */
 </style>
