@@ -93,6 +93,7 @@
 
 	.categories {
 		max-inline-size: var(--size-content-3);
+		width: 80vw;
 		margin-inline: auto;
 		display: flex;
 		overflow-x: scroll;
