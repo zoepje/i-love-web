@@ -613,6 +613,37 @@
 		border-radius: var(--radius-4);
 	}
 
+	.underconstruction {
+		position: absolute;
+		inset: 0;
+		z-index: 10;
+
+		& p {
+			position: relative;
+			background-color: #ffb101;
+			color: #000;
+			font-size: var(--font-size-4);
+			font-weight: 700;
+			width: 130%;
+			text-transform: uppercase;
+			text-align: center;
+			border: 10px solid #000;
+			border-image: repeating-linear-gradient(-55deg, #000, #000 20px, #ffb101 20px, #ffb101 40px)
+				10;
+			left: -15%;
+		}
+
+		& p:nth-child(1) {
+			top: 50%;
+			transform: rotate(35deg);
+		}
+
+		& p:nth-child(2) {
+			top: 38%;
+			transform: rotate(-35deg);
+		}
+	}
+
 	.hide,
 	.stop {
 		display: none;
@@ -1068,7 +1099,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		perspective:  800px;
+		perspective: 800px;
 
 		& h2 {
 			position: absolute;
