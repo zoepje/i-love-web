@@ -31,4 +31,4 @@ HTML -> tokenizer & tree builder -> DOM
 - Maakt te elementen aan die van tokenizer komen.
 - Maakt nieuwe en missende elementen aan.
 - Fouten herstellen die wij maken, als iets bijvoorbeeld verkeerd genest worden.
-  - `<b> 1 <i> 2 </b> 3 </i>` wordt als dit <b> 1 <i> 2 </b> 3 </i> gerenderd. genareerd een `<i>` wanneer hij 3 tegen komt.
+  - `<b> 1 <i> 2 </b> 3 </i>` wordt als dit <b> 1 </b> <i> <b> 2 </b> 3 </i> gerenderd. genareerd een `<i>` wanneer hij 3 tegen komt.
