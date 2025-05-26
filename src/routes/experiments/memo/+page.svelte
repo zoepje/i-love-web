@@ -85,38 +85,45 @@
 			cards = [...cards];
 		}, 600);
 	}
+
 </script>
 
-<h1>Memo Game</h1>
+<section>
+	<h1>Memo Game</h1>
 
-<div class="grid-container">
-	{#each cards as { image, name }}
-		<!-- svelte-ignore a11y-click-events-have-key-events -->
-		<!-- svelte-ignore a11y-no-static-element-interactions -->
-		<div class="card" data-name={name} on:click={flipCard}>
-			<div class="front">
-				<img class="front-image" src="/images/memo-cards/{image}" alt={name} />
+	<div class="grid-container">
+		{#each cards as { image, name }}
+			<!-- svelte-ignore a11y-click-events-have-key-events -->
+			<!-- svelte-ignore a11y-no-static-element-interactions -->
+			<div class="card" data-name={name} on:click={flipCard}>
+				<div class="front">
+					<img class="front-image" src="/images/memo-cards/{image}" alt={name} />
+				</div>
+				<div class="back"></div>
 			</div>
-			<div class="back"></div>
-		</div>
-	{/each}
-</div>
+		{/each}
+	</div>
 
-<p>Flips: <span class="score">{score}</span></p>
+	<p>Flips: <span class="score">{score}</span></p>
 
-<div class="actions">
-	<button on:click={restart}>Restart</button>
-</div>
+	<div class="actions">
+		<button on:click={restart}>Restart</button>
+	</div>
+</section>
 
 <style>
+	section {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	
 	h1 {
 		text-align: center;
 	}
 
 	p {
 		text-align: center;
-		font-size: 30px;
-		font-weight: bold;
 	}
 
 	.actions {
@@ -124,21 +131,12 @@
 		justify-content: center;
 	}
 
-	.actions button {
-		padding: 8px 16px;
-		font-size: 30px;
-		border-radius: 10px;
-		background-color: #27ae60;
-		color: white;
-	}
-
 	.grid-container {
-		perspective: 1000px;
-		display: grid;
+		display: flex;
 		justify-content: center;
 		grid-gap: 16px;
-		grid-template-columns: repeat(6, 140px);
-		grid-template-rows: repeat(2, calc(140px / 2 * 3));
+		flex-wrap: wrap;
+		max-width: calc(140px * 5 + 16px * 4);
 	}
 
 	.card {
