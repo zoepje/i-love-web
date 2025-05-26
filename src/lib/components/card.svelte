@@ -55,6 +55,7 @@
 
   img {
     border: 2px solid var(--brand);
+    width: 100%;
   }
 
   h2 {

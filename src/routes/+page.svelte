@@ -39,6 +39,8 @@
 	<a href="https://github.com/zoepje" target="_blank">Github</a>.
 </p>
 
+
+
 <style>
 	h1 {
 		text-align: center;
@@ -57,12 +59,8 @@
 	}
 
 	p {
-		width: 90%;
-	}
-
-	@container (min-width: 600px) {
-		p {
-			width: 40%;
-		}
+		text-align: center;
+		margin-inline: auto;
+		padding-top: var(--size-4);
 	}
 </style>
