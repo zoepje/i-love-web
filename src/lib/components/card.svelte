@@ -19,10 +19,12 @@
       <ExternalLink />
       Website
     </a>
-    <a href="{repo}" target="_blank" class="code">
-      <GithubMarkWhite />
-      Code
-    </a>
+    {#if repo}
+      <a href="{repo}" target="_blank" class="code">
+        <GithubMarkWhite />
+        Code
+      </a>
+    {/if}
   </div>
 
   {#if status}
