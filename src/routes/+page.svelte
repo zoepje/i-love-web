@@ -11,10 +11,24 @@
 
 <div>
 	<Card
-		image="werkenbijamvest.png"
-		title="Werken bij Amvest"
-		description="Vacantcy site for Amvest"
-		site="https://werkenbij.amvest.nl/"
+		image="confed.png"
+		title="Confed"
+		description="Company website for Confed"
+		site="https://www.confed.eu/"
+	/>
+
+	<Card
+		image="leapforce.png"
+		title="Leapforce"
+		description="Company website for Leapforce"
+		site="https://leapforce.nl/"
+	/>
+
+	<Card
+		image="energyhouse.png"
+		title="Energyhouse"
+		description="Company website for Energyhouse"
+		site="https://energyhouse.nl/"
 	/>
 
 	<Card
@@ -24,22 +38,12 @@
 		site="https://merlins-book-of-potions.onrender.com/"
 		repo="https://github.com/zoepje/proof-of-concept"
 	/>
-
-	<Card
-		image="oncollaboration.png"
-		title="Oncollaboration"
-		description="A platform for radio therapists to exchange knowledge"
-		site="https://oncollaboration.agency.fdnd.nl/"
-		repo="https://github.com/fdnd-agency/antoni-van-leeuwenhoek-oncology/tree/release-candidate"
-	/>
 </div>
 
 <p>
 	If you would like to see more you can visit my
 	<a href="https://github.com/zoepje" target="_blank">Github</a>.
 </p>
-
-
 
 <style>
 	h1 {

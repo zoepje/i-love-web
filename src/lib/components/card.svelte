@@ -10,7 +10,7 @@
 
 <article>
   <a href="{site}" target="_blank" class="card-link">
-    <img src="/images/{image}" alt="webite thumbnail" width="450" height="280">
+    <img src="/images/{image}" alt="{title} website thumbnail" width="450" height="280">
     <h2>{title}</h2>
     <p>{description}</p>
   </a>
